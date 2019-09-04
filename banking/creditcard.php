@@ -1,4 +1,4 @@
-<?php /* Template Name: personalloan */ ?>
+<?php /* Template Name: creaditcard */ ?>
 
 <?php get_header();?>
 
@@ -37,7 +37,7 @@ and more recently with desktop publishing software like Aldus PageMaker includin
       <div class="modal-content">
         <div class="modal-header">
           <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
-          <h4 class="modal-title">Personal Loan</h4>
+          <h4 class="modal-title">CREDIT CARD</h4>
         </div>
         <div class="modal-body"> 
           <h5><b>Get the best Loan that suits your requirement</b></h5>
@@ -135,7 +135,7 @@ and more recently with desktop publishing software like Aldus PageMaker includin
       		   
       			<div class="col-sm-6">
                       <div class="form-wrap">
-                        <p><b>Are you paying any monthly EMI?</b></p>	
+                        <p><b>Do you have any existing Credit card?</b></p>	
                           <label class="rediobtn">Yes
                             <input type="radio" checked="checked" name="radio">
                             <span class="checkmark"></span>
@@ -148,7 +148,13 @@ and more recently with desktop publishing software like Aldus PageMaker includin
       				</div>
               <div class="col-sm-6">
                       <div class="form-wrap">
-                        <input class="form-control" id="emi" placeholder="Total amount of EMIs you currently pay per month" type="text" name="emi" required>                  
+                        <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
+			                <option>United Kingdom</option>
+			                <option>United States</option>
+			                <option>France</option>
+			                <option>Germany</option>
+			                <option>Italy</option>
+			            </select>               
                       </div>
                     </div>
       			</div>
@@ -176,17 +182,24 @@ and more recently with desktop publishing software like Aldus PageMaker includin
           </div>
 				         
         </div>
-    </div>
+
 
     </div>
+
+ </div>
 </div>
-    </div>
+</div>
     <!-- Global Mailform Output-->
-	    <div class="snackbars" id="form-output-global"></div>
+<div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->			
-   <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-	<script>
+<script src="js/core.min.js"></script>
+<script src="js/script.js"></script>
+<script>
 	 $(window).load(function(){
-                $('#onload').modal('show');
-            });</script>
+     $('#onload').modal('show');
+      });
+$(function () {
+$('.selectpicker').selectpicker();
+});
+</script>
+
