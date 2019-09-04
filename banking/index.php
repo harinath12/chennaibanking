@@ -72,7 +72,8 @@ echo do_shortcode('[smartslider3 slider=2]');
         </div>
         <div>
           <div>
-            
+            <div><a href="#">Write about Us</a></div>
+            <div><a href="#">Refer your Friends and Earn</a></div>
           </div>
         </div>
       </section>   
