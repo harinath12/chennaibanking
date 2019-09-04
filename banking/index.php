@@ -1,12 +1,9 @@
 <?php get_header();?>
       <!-- Swiper-->
-      <section class="block-preview">
-        <div class="cover-image" style="background-image: url(<?php bloginfo('template_url');?>/images/index-3-1-1144x912.jpg)"></div>
-        <div class="container">
-          <div class="brand mobile-brand"><a href="#"><img src="<?php bloginfo('template_url');?>/images/logo-big-210x35.png" alt="" width="210" height="35"/></a></div>
-          <h1 class="title">Providing Reliable Banking Solutions</h1>
-          <h6 class="exeption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </h6><a class="button button-lg button-primary" href="#">Learn More</a>
-        </div>
+      <section class="block-preview slider">
+        <?php 
+echo do_shortcode('[smartslider3 slider=2]');
+?>
       </section>
 
       <!-- Advantages-->
@@ -34,21 +31,7 @@
                 <div class="subtitle">Business Loan</div>                           
               </div>
             </div>
-      <div class="col-md-2 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
-                </div>
-                <div class="subtitle">Home Loan</div>                           
-              </div>
-            </div>
-        <div class="col-md-2 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
-                </div>
-                <div class="subtitle">Home Loan</div>                           
-              </div>
-            </div>
-        <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-2 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
                 </div>
@@ -56,7 +39,7 @@
               </div>
             </div>
           </div>
-              <div class="row row-40">
+          <div class="row row-40">
             <div class="col-md-2 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
@@ -78,27 +61,18 @@
                 <div class="subtitle">Business Loan</div>                           
               </div>
             </div>
-      <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-2 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Home Loan</div>                           
               </div>
             </div>
-        <div class="col-md-2 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
-                </div>
-                <div class="subtitle">Home Loan</div>                           
-              </div>
-            </div>
-        <div class="col-md-2 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
-                </div>
-                <div class="subtitle">Home Loan</div>                           
-              </div>
-            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            
           </div>
         </div>
       </section>   
