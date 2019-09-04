@@ -178,7 +178,7 @@ and more recently with desktop publishing software like Aldus PageMaker includin
             </div>
           <div>
             <p><input type="checkbox" name=""> I accept the <a href="#">Terms & conditions</a> and allow Chennai Banking to call or send message.</p>
-            <button class="button button-sm button-primary" data-dismiss="modal" type="submit">Send</button>
+            <button class="button button-sm button-primary" data-dismiss="modal" type="submit">Submit</button>
           </div>
 				         
         </div>
@@ -198,8 +198,6 @@ and more recently with desktop publishing software like Aldus PageMaker includin
 	 $(window).load(function(){
      $('#onload').modal('show');
       });
-$(function () {
-$('.selectpicker').selectpicker();
-});
+
 </script>
 
