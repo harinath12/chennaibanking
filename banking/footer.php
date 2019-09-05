@@ -47,8 +47,10 @@
           </ul>
         </div>
     <!-- Javascript-->
-</script><script src="<?php bloginfo('template_url');?>/js/core.min.js"></script>
+    <script src="<?php bloginfo('template_url');?>/js/core.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/script.js"></script>
+    <script src="<?php bloginfo('template_url');?>/js/emicalc-lib.js" type="text/javascript"></script>
+    <script src="<?php bloginfo('template_url');?>/js/emicalc-main.min.js" type="text/javascript"></script>
   </body>
 
 

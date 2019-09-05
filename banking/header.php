@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/style.css" id="main-styles-link"> 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900"> 
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/widget.css">
     
   </head>
  <body>
@@ -44,20 +45,7 @@
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="#">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">About</a>                      
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Services</a>                      
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Careers</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>               
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Contacts</a>
-                      </li>
-                    </ul>
+                    <?php wp_nav_menu(array('menu' => 'Header menu'));?>
                   </div>
                   <!-- RD Navbar Search-->
                   <!-- <div class="rd-navbar-search">

@@ -8,30 +8,30 @@ echo do_shortcode('[smartslider3 slider=2]');
 
       <!-- Advantages-->
       <section class="section section-sm section-sm-1 bg-gray-100">
-        <div class="container text-center">
+        <div class="container service-container text-center">
           <div class="row row-40">
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Credit Card</div>                            
               </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/personal.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Personal Loans</div>  
               </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/business.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Business Loan</div>                           
               </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
                 </div>
@@ -40,28 +40,28 @@ echo do_shortcode('[smartslider3 slider=2]');
             </div>
           </div>
           <div class="row row-40">
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Credit Card</div>                            
               </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/personal.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Personal Loans</div>  
               </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/business.png" alt="" width="92" height="84"/>
                 </div>
                 <div class="subtitle">Business Loan</div>                           
               </div>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-sm-6 col-xs-6">
               <div class="counter-vertical">
                 <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
                 </div>
@@ -72,10 +72,12 @@ echo do_shortcode('[smartslider3 slider=2]');
         </div>
         <div>
           <div>
-            <div><a href="#">Write about Us</a></div>
-            <div><a href="#">Refer your Friends and Earn</a></div>
+            <div class="text-center review-btns">
+              <a class="button button-primary button-lg" href="#">Write about Us</a>
+              <a class="button button-primary button-lg" href="#">Refer your Friends and Earn</a>
+            </div>
           </div>
-        </div>
+        </div> 
       </section>   
 
       <!-- Advantages-->
@@ -417,3 +419,173 @@ echo do_shortcode('[smartslider3 slider=2]');
       </section>
 
      <?php get_footer(); ?>
+
+     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="onload">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+          <h4 class="modal-title">CREDIT CARD</h4>
+        </div>
+        <div class="modal-body"> 
+          <h5><b>Get the best Loan that suits your requirement</b></h5>
+
+              <div class="row">
+                 <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-control" placeholder="Name as per PAN Card" id="name" type="text" name="name" required>                
+                          </div>
+                </div>
+                <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <p><b>Gender</b>
+                              <label class="rediobtn">Male
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="rediobtn">Female
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                              </label></p> 
+                          </div>
+                  </div>
+              </div>
+              <div class="row">
+                 <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-control" placeholder="Date of Birth" type="text" onfocus="(this.type='date')" id="dob"  name="dob" required>                
+                          </div>
+                </div>
+                <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <input class="form-control" placeholder="Where do you stay in Chennai(Pincode)" id="pin" type="text" name="pin" required>                
+                      </div>
+                </div>
+              </div>
+              <div class="row">       
+                  <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <select class="form-control" required>
+                          <option disabled selected>Occupation Type</option>
+                          <option>Salaried</option>
+                          <option>Self Employed</option>
+                          <option>Unemployed</option>
+                          <option>Retired</option>
+                          <option>Student</option>
+                          <option>Home Maker</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <input class="form-control" placeholder="Company I Work for" id="Company" type="text" name="Company" required>                
+                      </div>
+                </div>
+                <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <input class="form-control" placeholder="Latest Year Income after Tax" id="income" type="text" name="income" required>  
+                      </div>
+                </div>
+              </div>
+              <div class="row">
+                    
+                    <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <input class="form-control" id="income" placeholder="Monthly Income" type="text" name="monthly" required>                  
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                          
+                      <div class="form-wrap">
+                        <select class="form-control" required>
+                          <option disabled selected>I receive Salary By</option>
+                          <option>Cash</option>
+                          <option>Cheque</option>
+                          <option>Bank Transfer</option>
+                        </select>
+                      </div>
+                    </div>
+              </div>
+
+              <div class="row">
+                    <div class="col-sm-6">
+                          <div class="form-wrap">
+                            <input class="form-control" placeholder="Mobile No" id="mobile" type="text" name="name" required>                
+                          </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <input class="form-control" id="email" placeholder="Personal Email" type="email" name="email" required>                  
+                      </div>
+                    </div>
+              </div>
+            <div class="row">
+             
+            <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <p><b>Do you have any existing Credit card?</b></p> 
+                          <label class="rediobtn">Yes
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="rediobtn">No
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                          </label>          
+                      </div>
+              </div>
+              <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
+                      <option>United Kingdom</option>
+                      <option>United States</option>
+                      <option>France</option>
+                      <option>Germany</option>
+                      <option>Italy</option>
+                  </select>               
+                      </div>
+                    </div>
+            </div>
+            <div class="row">
+             
+            <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <select class="form-control" required>
+                          <option disabled selected>Prefered Language</option>
+                          <option>Tamil</option>
+                          <option>English</option>
+                          <option>Others- Specify</option>
+                        </select>
+                      </div>
+              </div>
+              <div class="col-sm-6">
+                      <div class="form-wrap">
+                        <input class="form-control" id="language" placeholder="Type your language" type="text" name="language" required>             
+                      </div>
+                    </div>
+            </div>
+          <div>
+            <p><input type="checkbox" name=""> I accept the <a href="#">Terms & conditions</a> and allow Chennai Banking to call or send message.</p>
+            <button class="button button-sm button-primary" data-dismiss="modal" type="submit">Submit</button>
+          </div>
+                 
+        </div>
+
+
+    </div>
+
+ </div>
+</div>
+</div>
+    <!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->      
+<script src="js/core.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+   $(window).load(function(){
+     //$('#onload').modal('show');
+      });
+
+</script>

@@ -1,14 +1,14 @@
-<?php /* Template Name: personalloan */ ?>
+<?php /* Template Name: personal-loan */ ?>
 
 <?php get_header();?>
 
 
  <section class="section section-bredcrumbs">
         <div class="container context-dark breadcrumb-wrapper">
-          <h1>CREDIT CARD</h1>
+          <h1><?php the_title(); ?></h1>
           <ul class="breadcrumbs-custom">
             <li><a href="index.html">Home</a></li>           
-            <li class="active">Cridit Card</li>
+            <li class="active">Personal Loan</li>
           </ul>
         </div>
       </section>
