@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900"> 
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/widget.css">
-    
+    <?php wp_head(); ?>
   </head>
  <body>
     <div class="preloader">

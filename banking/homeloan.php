@@ -101,7 +101,8 @@
                 </div>
                 <div class="col-sm-6">
                       <div class="form-wrap">
-                        <input class="form-control" placeholder="Latest Year Income after Tax" id="income" type="text" name="income" required>  
+                        <input class="form-control" placeholder="Latest Year Income after Tax" id="income" type="text" name="income" required onkeyup="incometext.innerHTML=convertNumberToWords(this.value)" />
+                        <div id="incometext"></div>  
                       </div>
                 </div>
               </div>
@@ -109,7 +110,8 @@
                     
                     <div class="col-sm-6">
                       <div class="form-wrap">
-                        <input class="form-control" id="income" placeholder="Monthly Income" type="text" name="monthly" required>                  
+                        <input class="form-control" id="mincome" placeholder="Monthly Income" type="text" name="monthly" required onkeyup="mincometext.innerHTML=convertNumberToWords(this.value)" />
+                        <div id="mincometext"></div>                  
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -154,7 +156,8 @@
       				</div>
               <div class="col-sm-6">
                       <div class="form-wrap">
-                        <input class="form-control" id="emi" placeholder="Total amount of EMIs you currently pay per month" type="text" name="emi" required>                  
+                        <input class="form-control" id="emi" placeholder="Total amount of EMIs you currently pay per month" type="text" name="emi" required onkeyup="emitext.innerHTML=convertNumberToWords(this.value)" />
+                        <div id="emitext"></div>                 
                       </div>
                     </div>
       			</div>
