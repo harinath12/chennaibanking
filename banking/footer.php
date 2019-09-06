@@ -45,7 +45,7 @@
             </li>
            
           </ul>
-        </div>
+    </div>
     <!-- Javascript-->
     <script src="<?php bloginfo('template_url');?>/js/core.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/script.js"></script>
