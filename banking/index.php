@@ -1,5 +1,6 @@
 <?php get_header();?>
       <!-- Swiper-->
+       <marquee class="marquee">Best banking services. Attractive offers. Free service &  quick response. Digital & doorstep services. Only  for Chennai Customers. Quality financial suggestion</marquee>
       <section class="block-preview slider">
         <?php 
 echo do_shortcode('[smartslider3 slider=2]');
@@ -11,32 +12,40 @@ echo do_shortcode('[smartslider3 slider=2]');
         <div class="container service-container text-center">
           <div class="row row-40">
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('credit-card');?>">
+                <div class="counter-vertical">
+                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
+                  </div>
+                  <div class="subtitle">Credit Card</div>                            
                 </div>
-                <div class="subtitle">Credit Card</div>                            
-              </div>
+              </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/personal.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('personal-loan');?>">
+                <div class="counter-vertical">
+                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/personal.png" alt="" width="92" height="84"/>
+                  </div>
+                  <div class="subtitle">Personal Loans</div>  
                 </div>
-                <div class="subtitle">Personal Loans</div>  
-              </div>
+              </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/business.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('home-loan');?>">
+                <div class="counter-vertical">
+                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
+                  </div>
+                  <div class="subtitle">Home Loan</div>      
                 </div>
-                <div class="subtitle">Business Loan</div>                           
-              </div>
+              </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('mortgage-loan');?>">
+                <div class="counter-vertical">
+                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/business.png" alt="" width="92" height="84"/>
+                  </div>
+                  <div class="subtitle">Mortgage Loan</div>                       
                 </div>
-                <div class="subtitle">Home Loan</div>                           
-              </div>
+              </a>
             </div>
           </div>
           <div class="row row-40">
@@ -74,7 +83,7 @@ echo do_shortcode('[smartslider3 slider=2]');
           <div>
             <div class="text-center review-btns">
               <a class="button button-primary button-lg" id="testimonial" href="#">Write about Us</a>
-              <a class="button button-primary button-lg" href="#">Refer your Friends and Earn</a>
+              <a class="button button-primary button-lg" id="referbtn" href="#">Refer your Friends and Earn</a>
             </div>
           </div>
         </div> 
@@ -294,8 +303,8 @@ echo do_shortcode('[smartslider3 slider=2]');
             <div class="col-md-9 col-lg-6 col-xxl-7">
               <h3>Subscribe for <span class="font-weight-bold">News and Updates</span></h3>
             </div>
-            <?php echo do_shortcode('[wpforms id="75" title="false" description="false"]');?>
-            <div class="col-md-8 col-lg-5 col-xxl-4">             
+            <?php echo do_shortcode('[email-subscribers-form id="1"]');?>
+            <!-- <div class="col-md-8 col-lg-5 col-xxl-4">             
               <form class="rd-form rd-mailform rd-form-inline-2" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="#">
                 <div class="form-wrap">
                   <input class="form-input" id="subscribe-form-0-email" type="email" name="email" data-constraints="@Email @Required"/>
@@ -303,7 +312,7 @@ echo do_shortcode('[smartslider3 slider=2]');
                 </div>
                 <button class="form-icon-button mdi mdi-email-outline" type="submit"></button>
               </form>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -327,10 +336,71 @@ echo do_shortcode('[smartslider3 slider=2]');
 
  </div>
 </div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="refer">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+          <h4 class="modal-title"><b>Refer Your Friends and Relatives</b></h4>
+        </div>
+        <div class="modal-body" ng-controller="ReferController">
+          <div ng-if="pageInfo.enquirydone">
+            <p>Thank you for your referral we will get in touch with you shortly!</p>
+          </div>
+          <form ng-if="!pageInfo.enquirydone" name="pageInfo.referform" method="post" ng-class="{formSubmitted: pageInfo.formSubmitted}">
+            <div class="row">
+              <div class="col-sm-6">
+                <div>
+                  <h4 class="margin-bottom">Your Details</h4>
+                </div>
+                 <div class="form-wrap">
+                   <input type="text" ng-model="newEnquiry.name" class="form-control" name="username" placeholder="Your Name" required=" ">                 
+                  </div>
+                <div class="form-wrap">
+                   <input type="email" ng-model="newEnquiry.email" class="form-control" name="email" placeholder="Enter your e-mail" required="">                 
+                  </div>
+                  <div class="form-wrap">
+                   <input type="text" ng-model="newEnquiry.phone" class="form-control" name="phone number" placeholder="Enter your Phone number" required="">                 
+                  </div>
+              </div>
+              
+              <div class="col-sm-6">
+                <div>
+                  <h4 class="margin-bottom">Referral details</h4>
+                </div>
+                 <div class="form-wrap">
+                    <input type="text" ng-model="newEnquiry.name2" class="form-control" name="username2" placeholder="Referral name" required=" ">                 
+                  </div>
+                <div class="form-wrap">
+                    <input type="email" ng-model="newEnquiry.email2" class="form-control" name="email2" placeholder="Enter referral e-mail" required="">                 
+                  </div>
+                  <div class="form-wrap">
+                   <input type="text" ng-model="newEnquiry.phone2" class="form-control" name="phone2" placeholder="Enter referral Phone number" required="">                 
+                  </div>
+                </div>
+              </div>
+                <div class="row">
+                  <div class="col-sm-12 form-wrap">
+                  <textarea ng-model="newEnquiry.more" name="more" class="form-control" required placeholder="Tell us more about your referral "></textarea>                
+                  </div>
+              </div>
+              
+            
+            <div class="text-center padding">
+                <button class="button button-sm button-primary" ng-click="submitForm();" type="submit">Submit</button>
+              </div>
+        </form> 
+                     
+            </div>
+
+
+    </div>
+
+ </div>
 </div>
-    <!-- Global Mailform Output-->
-<div class="snackbars" id="form-output-global"></div>
-    <!-- Javascript-->      
+
 
 
  <?php get_footer(); ?>

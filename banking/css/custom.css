@@ -1,0 +1,25 @@
+.formSubmitted .ng-invalid{
+	border: 1px solid red;
+}
+.col-green{
+	color: green;
+}
+.es_subscription_message.success{
+	color: white!important;
+}
+.rd-input-label{
+	display: none;
+}
+.strong-view.default.slider-container.slider-adaptive:not(.slider-mode-horizontal) .wpmslider-viewport{
+	border: none !important;
+}
+.margin-bottom{
+	margin-bottom: 10px;
+}
+.marquee{
+    margin-bottom: -6px;
+    background: blue;
+    color: white;
+    padding: 5px;
+
+}

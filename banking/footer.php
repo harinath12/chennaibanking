@@ -46,17 +46,25 @@
            
           </ul>
     </div>
+    <script type="text/javascript">
+        var ajaxurl = "<?= site_url('wp-admin/admin-ajax.php?action=');?>";
+    </script>
     <!-- Javascript-->
     <script src="<?php bloginfo('template_url');?>/js/core.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/script.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/emicalc-lib.js" type="text/javascript"></script>
     <script src="<?php bloginfo('template_url');?>/js/emicalc-main.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="<?php bloginfo('template_url');?>/js/controller.js"></script>
     <?php wp_footer(); ?>
     <script>
        $("#testimonial").click(function(){
          $('#onload').modal('show');
           });
 
+$("#referbtn").click(function(){
+         $('#refer').modal('show');
+          });
     function convertNumberToWords(amount) {
     var words = new Array();
     words[0] = '';
@@ -138,6 +146,12 @@
     }
     return words_string;
 }
+
+$(document).ready(function(){
+  $(document).on('click', '.wpmslider-controls-direction a', function(e){
+    e.preventDefault();
+  });
+});
 
 </script>
   </body>

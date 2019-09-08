@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html ng-app="cbApp" class="wide wow-animation" lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <title>Home</title>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900"> 
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/widget.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/custom.css">
     <?php wp_head(); ?>
   </head>
  <body>
