@@ -21,5 +21,19 @@
     background: blue;
     color: white;
     padding: 5px;
-
+}
+.que-form{
+    background: #1C6899;
+    color: white;
+}
+.que-form h5{
+color: white;
+}
+.date-select{
+    display: inline-block;
+    width: 15%;
+}
+.que-form a{
+color: white;
+text-decoration: underline;
 }
