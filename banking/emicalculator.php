@@ -4,7 +4,7 @@
 
 <section class="section section-bredcrumbs">
         <div class="container context-dark breadcrumb-wrapper">
-          <h1><?php the_title(); ?></h1>
+          <h3><?php the_title(); ?></h3>
           <ul class="breadcrumbs-custom">
             <li><a href="index.html">Home</a></li>           
             <li class="active">EMI Calculator</li>

@@ -5,7 +5,7 @@
 
  <section class="section section-bredcrumbs">
         <div class="container context-dark breadcrumb-wrapper">
-          <h1><?php the_title(); ?></h1>
+          <h3><?php the_title(); ?></h3>
           <ul class="breadcrumbs-custom">
             <li><a href="index.html">Home</a></li>           
             <li class="active">Cridit Card</li>
@@ -16,6 +16,32 @@
 
 <section class="que-form" >          
     <div class="container" ng-controller="CCFormController">
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="onload">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+                <h4 class="modal-title" ng-if="pageInfo.mobileVerified == 1">Thank you</h4>
+                <h4 class="modal-title" ng-if="pageInfo.mobileVerified != 1">Verify OTP</h4>
+              </div>
+              <div class="modal-body modal-pop"> 
+                 <div ng-if="pageInfo.mobileVerified == 1">
+                  <p>Mobile Number Verified, Thank you for submitting your details. Our executive will get in touch with you shortly!</p>
+                </div>
+                <div ng-if="pageInfo.mobileVerified == 2 || pageInfo.mobileVerified == 4">
+                  <div class="form-wrap">
+                  <input ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
+                  <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            
+                  </div>
+                </div>
+            </div>
+          </div>
+
+       </div>
+      </div> 
+
         <div class="modal-body"> 
           <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='Credit Card'">
             <h5><b>Get the best Card that suits your requirement by filling the below Details.</b></h5>
@@ -52,7 +78,7 @@
                         <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label >Email</label>
-                                <input ng-model="newEnquiry.name" class="form-control" placeholder="Enter Your email" id="name" type="text" name="name" required>                
+                                <input ng-model="newEnquiry.email" class="form-control" placeholder="Enter Your email" id="name" type="text" name="name" required>                
                               </div>
                         </div>
                   </div>
@@ -214,42 +240,4 @@
 
  <?php get_footer(); ?>
 
- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="onload">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
-          <h4 class="modal-title" ng-if="pageInfo.enquirydone">Thank you</h4>
-          <h4 class="modal-title" ng-if="!pageInfo.enquirydone">Verify OTP</h4>
-        </div>
-        <div class="modal-body"> 
-          <div ng-if="pageInfo.enquirydone">
-            <p>Thank you for submitting your details. Our executive will get in touch with you shortly!</p>
-          </div>
-          <div class="col-sm-6 col-green" ng-if="pageInfo.mobileVerified == 1">
-          <p ng-if="pageInfo.mobileVerified == 1"><i class="fa fa-check"></i> Mobile Number Verified</p>
-          </div>
-          <div class="col-sm-6" ng-if="pageInfo.mobileVerified == 2 || pageInfo.mobileVerified == 4">
-          <div class="form-wrap">
-          <input ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
-          <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            
-          </div>
-          </div>
-      </div>
-    </div>
-
- </div>
-</div> 
-
-
-
-<script>
-   $(window).load(function(){
-       $('#onload').modal('show');
-    });
-  
-  
-
-</script>
 

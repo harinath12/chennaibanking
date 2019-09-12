@@ -37,3 +37,217 @@ color: white;
 color: white;
 text-decoration: underline;
 }
+.sub-menu{
+	position: absolute;
+	width: 250px;
+    background-color: #1e1e1e;
+	display: none;
+	z-index: 999;
+	border-radius: 10px;
+}
+.menu-item{
+	position: relative;
+
+}
+.sub-menu .menu-item{
+	display: block!important;
+	margin-left: 0!important;
+}
+.menu-item:hover > .sub-menu{
+	display: block;
+}
+.rd-navbar-static .rd-nav-item.active .rd-nav-link, .rd-navbar-static .menu-item.current-menu-item a{
+	color: #0e86ff!important;
+	text-decoration: underline;
+}
+.rd-navbar-static .rd-nav-link:hover, .rd-navbar-static .menu-item a:hover{
+	color: #0e86ff!important;
+	text-decoration: underline;
+}
+.modal-pop{
+	    COLOR: GREEN;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 6px;
+  margin: 0 auto;
+  background:white;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px 0 #aaa;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  /*background-color: #bbb;
+  color: black;*/
+  margin-top: 10px;
+}
+
+.flip-card-back {
+  background-color: #0E86FF;
+  color: white!important;
+  transform: rotateY(180deg);
+   border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px 0 #aaa;
+}
+.flip-card-back h3{
+	color: white!important;
+	text-align: center;
+    margin-top: 55px;
+    font-size: 24px;
+}
+.subtitle{
+	margin:0!important;
+	color: #044bb1;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+}
+.flip-card-front img{
+	height: 70px!important;
+	padding: 10px;
+}
+
+
+.rd-navbar-static .rd-nav-link, .rd-navbar-static .menu-item a{
+	position: relative;
+    display: inline-block;
+    color: #0e86ff!important;
+    font-size: 18px;
+    line-height: 1.33;
+    transition: .25s;
+    font-weight: 500;
+}
+.rd-navbar-static .rd-nav-link, .rd-navbar-static .sub-menu .menu-item a{
+	color: #fff!important;
+	padding: 5px;
+}
+.sub-menu .menu-item a:hover{
+	color: #fff!important;
+    text-decoration: underline
+}
+.logo{
+	float: left;
+	width: 200px;
+    
+}
+.rd-navbar.navig{
+    float: right;
+}
+.rd-navbar-classic.rd-navbar-static{
+		background: white!important;
+}
+
+.wpcf7{
+    width: 900px;
+    margin: 0 auto!important;
+}
+.content-area{
+	background-color: #f7f7f7;
+}
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 textarea
+{
+   display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #ffffff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.wpcf7 input[type="submit"]{
+	padding: 9px 30px!important;
+    font-size: 14px!important;
+    line-height: 1.5!important;
+    color: #ffffff;
+    background-color: #0346aa;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.25;
+    border: 0 solid;
+    border-radius: 40px;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    transition: 250ms all ease-in-out;
+    box-shadow: 0 3px 21px 4px rgba(41, 41, 58, 0.2);
+}
+.wpcf7 label{
+	font-weight: 600;
+}
+ .wpcf7 p{
+   margin-bottom: 12px;
+}
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
+	display: none!important;
+}
+input.wpcf7-not-valid, textarea.wpcf7-not-valid {
+	border-color: red!important;
+}
+.wpcf7-not-valid-tip{
+	display: none!important	;
+}
+
+#ecww-formwrapper, #ecww-summary, #ecww-piechart{
+	height: 340px!important;
+}
+#ecww-monthlypayment, #ecww-totalinterest, #ecww-totalamount {
+    padding: 28px 0;
+    }
+
+    @media (min-width: 768px){
+#ecww-summary, #ecww-piechart {
+   
+    border: 1px solid #EEE!important;
+}
+}
+
+@media only screen and (max-width: 600px) {
+	.col-md-3 .col-sm-6 .col-xs-6{
+		width: 50%;
+	}
+}

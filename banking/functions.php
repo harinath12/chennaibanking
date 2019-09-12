@@ -56,7 +56,9 @@ class Lead_List_Table extends WP_List_Table {
             		return $item[$column_name];
             	}
             case 'title':
-            return $item['name'];    
+                return $item['name'];    
+            case 'mobile_verified':
+                return $item['mobile_verified'] ? 'Yes' : 'No'; 
             default:
                 return $item[$column_name]; //Show the whole array for troubleshooting purposes
         }

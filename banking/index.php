@@ -13,69 +13,125 @@ echo do_shortcode('[smartslider3 slider=2]');
           <div class="row row-40">
             <div class="col-md-3 col-sm-6 col-xs-6">
               <a href="<?= site_url('credit-card');?>">
-                <div class="counter-vertical">
-                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
-                  </div>
-                  <div class="subtitle">Credit Card</div>                            
-                </div>
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/credit_card.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Credit Card</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
+                    </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
               <a href="<?= site_url('personal-loan');?>">
-                <div class="counter-vertical">
-                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/personal.png" alt="" width="92" height="84"/>
-                  </div>
-                  <div class="subtitle">Personal Loans</div>  
-                </div>
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/Instant_Personal_Loan.svg" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Personal Loan</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
+                    </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
               <a href="<?= site_url('home-loan');?>">
-                <div class="counter-vertical">
-                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
-                  </div>
-                  <div class="subtitle">Home Loan</div>      
-                </div>
+               <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/home_loan.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Home Loan</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
+                    </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
               <a href="<?= site_url('mortgage-loan');?>">
-                <div class="counter-vertical">
-                  <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/business.png" alt="" width="92" height="84"/>
-                  </div>
-                  <div class="subtitle">Mortgage Loan</div>                       
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/Mortgage_Loan.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Mortgage loan</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
                 </div>
               </a>
             </div>
           </div>
           <div class="row row-40">
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/card.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('home-loan');?>">
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/Loan-Against-Property-icon.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Home loan for Cash salary/Without ITR</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
                 </div>
-                <div class="subtitle">Credit Card</div>                            
-              </div>
+              </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/personal.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('home-loan');?>">
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/home-loan-construction-icon.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Construction loan(without plan approval)</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
                 </div>
-                <div class="subtitle">Personal Loans</div>  
-              </div>
+              </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/business.png" alt="" width="92" height="84"/>
+             <a href="<?= site_url('home-loan');?>">
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/house-symbol.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">Home Loan for patta property</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
                 </div>
-                <div class="subtitle">Business Loan</div>                           
-              </div>
+              </a>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">
-              <div class="counter-vertical">
-                <div class="counter-boxed-media"><img src="<?php bloginfo('template_url');?>/images/home.png" alt="" width="92" height="84"/>
+              <a href="<?= site_url('emi-calculator');?>">
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/emi_calculator.png" alt="" style="width:100px;height:90px;">
+                          <div class="subtitle">EMI Calculator</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Check EMI</h3> 
+                        </div>
+                      </div>
                 </div>
-                <div class="subtitle">Home Loan</div>                           
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -175,27 +231,27 @@ echo do_shortcode('[smartslider3 slider=2]');
         </div><img class="img-custom" src="<?php bloginfo('template_url');?>/images/index-3-1-959x808.png" alt="" width="959" height="808"/>
       </section>
         <!-- Latest Statistical Information-->
-      <section class="section">
+     <!--  <section class="section">
         <div class="container">
           <div class="row row-fix align-items-end">
             <div class="col-lg-8">
               <div class="section-lg">
                 <h2>Latest Statistical Information</h2>
                 <div class="row row-offset-4 row-fix">
-                  <div class="col-md-6">
+                  <div class="col-md-6">-->
                     <!-- gradient blocks-->
                     <!-- gradient primary-->
-                    <svg class="svg-hidden">
+                    <!-- <svg class="svg-hidden"> -->
                       <!-- gradient-->
-                      <lineargradient id="linear-gradient-primary" x1="50%" y1="30%" x2="50%" y2="100%">
+                      <!-- <lineargradient id="linear-gradient-primary" x1="50%" y1="30%" x2="50%" y2="100%">
                         <stop offset="0%" stop-color="#00db8e"></stop>
                         <stop offset="100%" stop-color="#fff"></stop>
                       </lineargradient>
-                    </svg>
+                    </svg> -->
                     <!-- gradient secondary-->
-                    <svg class="svg-hidden">
+                   <!--  <svg class="svg-hidden"> -->
                       <!-- gradient-->
-                      <lineargradient id="linear-gradient-secondary" x1="50%" y1="30%" x2="50%" y2="100%">
+                  <!--     <lineargradient id="linear-gradient-secondary" x1="50%" y1="30%" x2="50%" y2="100%">
                         <stop offset="0%" stop-color="#00db8e"></stop>
                         <stop offset="100%" stop-color="#130c37"></stop>
                       </lineargradient>
@@ -214,9 +270,9 @@ echo do_shortcode('[smartslider3 slider=2]');
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- Latest Blog Posts-->
-      <section class="section section-lg bg-gray-100">
+      <!-- <section class="section section-lg bg-gray-100">
         <div class="container text-center">
           <h2>Latest Blog Posts</h2>
           <div class="row row-30 row-offset-4 text-left">
@@ -286,7 +342,7 @@ echo do_shortcode('[smartslider3 slider=2]');
           </div>
           <div class="button-wrap-lg"><a class="button button-lg button-primary" href="#">View All Blog Posts</a></div>
         </div>
-      </section> 
+      </section>  -->
     <!-- Testimonials-->
       <section class="section section-lg">
         <div class="container text-center">

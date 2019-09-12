@@ -2,7 +2,11 @@
 <html ng-app="cbApp" class="wide wow-animation" lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-    <title>Home</title>
+    <title><?php if(is_front_page() || is_home()){
+        echo get_bloginfo('name');
+    } else{
+        echo wp_title('');
+    }?></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,10 +33,15 @@
     </div>
     <div class="page">
       <!-- Page Header-->
-      <header class="section page-header">
+      <header class="container section page-header">
+        
+
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="20px" data-xl-stick-up-offset="20px" data-xxl-stick-up-offset="20px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="logo">
+               <a href="<?= site_url();?>"> <img src="<?php bloginfo('template_url');?>/images/chennaibanking.png"></a>            
+            </div>
+          <nav class=" rd-navbar navig rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="20px" data-xl-stick-up-offset="20px" data-xxl-stick-up-offset="20px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
             <div class="rd-navbar-main-outer">
               <div class="rd-navbar-main">
                 <!-- RD Navbar Panel-->
@@ -48,25 +57,9 @@
                     <!-- RD Navbar Nav-->
                     <?php wp_nav_menu(array('menu' => 'Header menu'));?>
                   </div>
-                  <!-- RD Navbar Search-->
-                  <!-- <div class="rd-navbar-search">
-                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-2" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
-                    <form class="rd-search" action="" >
-                      <div class="form-wrap">
-                        <label class="form-label" for="rd-navbar-search-form-input">Search</label>
-                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
-                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
-                      </div>
-                      <button class="rd-search-form-submit mdi mdi-magnify" type="submit"></button>
-                    </form>
-                  </div> -->
+                
                 </div>
-                <!-- <div class="rd-navbar-aside-element">
-                  <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-                  <div class="rd-navbar-collapse rd-navbar-info">
-                    <div class="icon mdi mdi-cellphone-iphone"></div><a href="tel:#">960-000-0011</a>
-                  </div>
-                </div> -->
+                
               </div>
             </div>
           </nav>

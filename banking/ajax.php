@@ -1,5 +1,5 @@
 <?php
-$ajax_actions = array('cb_verify_otp', 'cb_new_enquiry', 'cb_new_referral');
+$ajax_actions = array('cb_verify_otp', 'cb_new_enquiry', 'cb_new_referral', 'cb_update_verified');
 
 foreach ($ajax_actions as $key => $value) {
 	add_action('wp_ajax_'.$value, $value);
@@ -55,6 +55,18 @@ function cb_new_enquiry(){
 		$data = array('status' => 'Error', 'msg' => 'Error while saving this enquiry. Please try again');
 	}
 
+	echo json_encode($data);
+	die(0);
+}
+
+function cb_update_verified(){
+	global $wpdb;
+
+	$_POST = (array) json_decode(file_get_contents('php://input'));
+
+	$wpdb->insert('wp_enquiry', array('mobile_verified' => 1), array('id' => $_POST['id']));
+
+	$data = array('status' => 'Success');
 	echo json_encode($data);
 	die(0);
 }
