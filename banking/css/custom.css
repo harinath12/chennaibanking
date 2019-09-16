@@ -18,13 +18,14 @@
 }
 .marquee{
     margin-bottom: -6px;
-    background: blue;
+    background: #0d82fa;
     color: white;
     padding: 5px;
 }
 .que-form{
-    background: #1C6899;
+    background: #2e69a2;
     color: white;
+  
 }
 .que-form h5{
 color: white;
@@ -43,7 +44,8 @@ text-decoration: underline;
     background-color: #1e1e1e;
 	display: none;
 	z-index: 999;
-	border-radius: 10px;
+	    border-radius: 0px 0 4px 4px;
+    padding: 3px 12px;
 }
 .menu-item{
 	position: relative;
@@ -52,7 +54,9 @@ text-decoration: underline;
 .sub-menu .menu-item{
 	display: block!important;
 	margin-left: 0!important;
+      margin: 5px;
 }
+.sub-menu .menu-item:hover{background: #5d5b5b;}
 .menu-item:hover > .sub-menu{
 	display: block;
 }
@@ -118,8 +122,9 @@ text-decoration: underline;
 .flip-card-back h3{
 	color: white!important;
 	text-align: center;
-    margin-top: 55px;
-    font-size: 24px;
+        margin-top: 60px;
+    font-size: 18px;
+    font-weight: 500;
 }
 .subtitle{
 	margin:0!important;
@@ -137,8 +142,8 @@ text-decoration: underline;
 .rd-navbar-static .rd-nav-link, .rd-navbar-static .menu-item a{
 	position: relative;
     display: inline-block;
-    color: #0e86ff!important;
-    font-size: 18px;
+    color: #444!important;
+    font-size: 14px;
     line-height: 1.33;
     transition: .25s;
     font-weight: 500;
@@ -149,7 +154,7 @@ text-decoration: underline;
 }
 .sub-menu .menu-item a:hover{
 	color: #fff!important;
-    text-decoration: underline
+    text-decoration: none;
 }
 .logo{
 	float: left;

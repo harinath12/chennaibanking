@@ -122,6 +122,8 @@
                             <input ng-model="newEnquiry.company" class="form-control" placeholder="Company I Work for" id="Company" type="text" name="Company" required>                
                           </div>
                     </div>
+                    </div>
+                    <div class="row">
                     <div class="col-sm-6" ng-if="newEnquiry.occupation == 'Self Employed'">
                           <div class="form-wrap">
                             <label>Latest Year Income after Tax</label>
@@ -130,8 +132,7 @@
                           </div>
                     </div>
                   </div>
-                  <div class="row" ng-if="newEnquiry.occupation == 'Salaried'">
-                        
+                  <div class="row" ng-if="newEnquiry.occupation == 'Salaried'">                        
                         <div class="col-sm-6">
                           <div class="form-wrap">
                             <label>Monthly Income</label>
@@ -139,8 +140,7 @@
                             <div id="mincometext"></div>                  
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                              
+                        <div class="col-sm-6">                              
                           <div class="form-wrap">
                             <label>I receive Salary By</label>
                             <select class="form-control" required  ng-model="newEnquiry.salary_by">

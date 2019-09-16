@@ -6,7 +6,7 @@
         echo get_bloginfo('name');
     } else{
         echo wp_title('');
-    }?> </title>
+    }?></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,13 +37,13 @@
         
 
         <!-- RD Navbar-->
-        <div class="rd-navbar-wrap">
-            <div class="logo">
-               <a href="<?= site_url();?>"> <img src="<?php bloginfo('template_url');?>/images/chennaibanking.png"></a>            
-            </div>
+        <div class="rd-navbar-wrap">           
           <nav class=" rd-navbar navig rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="20px" data-xl-stick-up-offset="20px" data-xxl-stick-up-offset="20px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
             <div class="rd-navbar-main-outer">
               <div class="rd-navbar-main">
+               <div class="logo">
+               <a href="<?= site_url();?>"> <img src="<?php bloginfo('template_url');?>/images/chennaibanking.png"></a>            
+            </div>
                 <!-- RD Navbar Panel-->
                 <div class="rd-navbar-panel">
                   <!-- RD Navbar Toggle-->
@@ -52,8 +52,8 @@
                   <div class="rd-navbar-brand"><a class="brand" href="#"><img class="brand-logo-dark" src="images/logo-150x25.png" alt="" width="150" height="25"/><img class="brand-logo-light" src="images/logo-inverse-150x25.png" alt="" width="150" height="25"/></a>
                   </div>
                 </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
+                <div class="rd-navbar-main-element">               
+                  <div class="rd-navbar-nav-wrap">                
                     <!-- RD Navbar Nav-->
                     <?php wp_nav_menu(array('menu' => 'Header menu'));?>
                   </div>

@@ -4,12 +4,12 @@
           <div class="col-xl-8">
             <div class="footer-wrapper">
               <div class="container">
-                <div class="row row-30 row-xxl-80 justify-content-between">    
+                <div class="row row-30 row-xxl-80 text-center justify-content-between">    
                   <div class="col-md-6 col-lg-6">
                     <!-- Rights-->
                     <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>All rights reserved</span><span>.&nbsp;</span><a href="#">Privacy Policy</a></p>
                   </div>
-                  <div class="col-md-6 col-lg-5">
+                  <div class="col-md-6 col-lg-5 ">
                     <div class="group-md group-middle social-items"><a class="icon icon-md novi-icon mdi mdi-facebook" href="#"></a><a class="icon icon-md novi-icon mdi mdi-twitter" href="#"></a><a class="icon icon-md novi-icon mdi mdi-instagram" href="#"></a><a class="icon icon-md novi-icon mdi mdi-facebook-messenger" href="#"></a><a class="icon icon-md novi-icon mdi mdi-linkedin" href="#"></a><a class="icon icon-md novi-icon mdi mdi-snapchat" href="#"></a></div>
                   </div>
                 </div>
