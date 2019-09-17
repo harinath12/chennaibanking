@@ -198,7 +198,7 @@ text-decoration: underline;
     border-radius: 0.25rem;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.wpcf7 input[type="submit"]{
+.wpcf7, .strong-form .form-field.wpmtst-submit input[type="submit"]{
 	padding: 9px 30px!important;
     font-size: 14px!important;
     line-height: 1.5!important;
@@ -309,4 +309,7 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
   }
   .rd-navbar-wrap, .rd-navbar, .rd-menu, .rd-navbar-nav, .rd-navbar-panel, .rd-navbar-static .rd-menu, .rd-navbar-fixed .rd-navbar-nav-wrap, .rd-navbar-fixed .rd-navbar-submenu{
     transition: none!important;
+  }
+  .strong-form .after{
+    display: none!important;
   }
