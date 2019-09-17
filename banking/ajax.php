@@ -43,6 +43,7 @@ function cb_new_enquiry(){
 	if($data['banks']){
 		$data['banks'] = serialize($data['banks']);
 	}
+	$data['dob'] = implode('-', $data['dob']);
 	$data['enquiry_ts'] = date('Y-m-d H:i:s');
 	
 	//print_r($data);

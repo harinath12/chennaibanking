@@ -230,47 +230,24 @@ echo do_shortcode('[smartslider3 slider=2]');
           </div>
         </div><img class="img-custom" src="<?php bloginfo('template_url');?>/images/index-3-1-959x808.png" alt="" width="959" height="808"/>
       </section>
-        <!-- Latest Statistical Information-->
-     <!--  <section class="section">
+        <!-- Partner Banks-->
+     <section class="section bg-primary-gradient">
         <div class="container">
-          <div class="row row-fix align-items-end">
-            <div class="col-lg-8">
-              <div class="section-lg">
-                <h2>Latest Statistical Information</h2>
-                <div class="row row-offset-4 row-fix">
-                  <div class="col-md-6">-->
-                    <!-- gradient blocks-->
-                    <!-- gradient primary-->
-                    <!-- <svg class="svg-hidden"> -->
-                      <!-- gradient-->
-                      <!-- <lineargradient id="linear-gradient-primary" x1="50%" y1="30%" x2="50%" y2="100%">
-                        <stop offset="0%" stop-color="#00db8e"></stop>
-                        <stop offset="100%" stop-color="#fff"></stop>
-                      </lineargradient>
-                    </svg> -->
-                    <!-- gradient secondary-->
-                   <!--  <svg class="svg-hidden"> -->
-                      <!-- gradient-->
-                  <!--     <lineargradient id="linear-gradient-secondary" x1="50%" y1="30%" x2="50%" y2="100%">
-                        <stop offset="0%" stop-color="#00db8e"></stop>
-                        <stop offset="100%" stop-color="#130c37"></stop>
-                      </lineargradient>
-                    </svg>
-                    <div class="d3-chart" id="spline-chart" style="width:100%; margin: 0 auto"></div>
-                  </div>
-                  <div class="col-md-6 col-xl-5">
-                    <p class="text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry</p><a class="button button-1 button-lg button-primary" href="#">Read more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 d-none d-lg-block">
-              <div class="wrap"><img class="d-block" src="<?php bloginfo('template_url');?>/images/index-3-2-338x507.png" alt="" width="338" height="507"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
+          <div class="partner">              
+                <h2>Partner Banks</h2>
+                <section class="customer-logos slider">
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+                  <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+               </section>       
+      </div>
+    </div>
+  </section> 
       <!-- Latest Blog Posts-->
       <!-- <section class="section section-lg bg-gray-100">
         <div class="container text-center">
@@ -379,7 +356,7 @@ echo do_shortcode('[smartslider3 slider=2]');
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
           <h4 class="modal-title">Write about us</h4>
         </div>
         <div class="modal-body"> 
@@ -398,7 +375,7 @@ echo do_shortcode('[smartslider3 slider=2]');
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
           <h4 class="modal-title"><b>Refer Your Friends and Relatives</b></h4>
         </div>
         <div class="modal-body" ng-controller="ReferController">

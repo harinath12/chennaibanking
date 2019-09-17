@@ -56,6 +56,8 @@
     <script src="<?php bloginfo('template_url');?>/js/emicalc-main.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/controller.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
     <?php wp_footer(); ?>
     <script>
        $("#testimonial").click(function(){
@@ -151,6 +153,29 @@ $(document).ready(function(){
   $(document).on('click', '.wpmslider-controls-direction a', function(e){
     e.preventDefault();
   });
+});
+
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
 });
 
 </script>

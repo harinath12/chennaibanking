@@ -4,7 +4,10 @@ include WP_CONTENT_DIR . '/themes/banking/ajax.php';
 if(!class_exists('WP_List_Table')){
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
-
+add_action( 'after_setup_theme', 'register_my_menu' );
+function register_my_menu() {
+  register_nav_menu( 'primary', __( 'Primary Menu', 'theme-slug' ) );
+}
 class Lead_List_Table extends WP_List_Table {
 	function __construct(){
         global $status, $page;

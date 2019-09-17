@@ -41,8 +41,8 @@
        </div>
       </div> 
 
-        <div class="modal-body"> 
-          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='Credit Card'">
+        <div class="modal-body" > 
+          <form ng-click="pageInfo.showcity = false;"  ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='Credit Card'">
             <h5><b>Get the best Card that suits your requirement by filling the below Details.</b></h5>
               <div class="row">
                      <div class="col-sm-6">
@@ -59,7 +59,7 @@
                                     <span class="checkmark"></span>
                                   </label>
                                   <label class="rediobtn">Female
-                                    <input value="Female" type="radio" checked="checked" name="gender">
+                                    <input ng-model="newEnquiry.gender" value="Female" type="radio" name="gender">
                                     <span class="checkmark"></span>
                                   </label></p>
                               </div>
@@ -77,7 +77,7 @@
                         <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label >Email</label>
-                                <input ng-model="newEnquiry.name" class="form-control" placeholder="Enter Your email" id="name" type="text" name="name" required>                
+                                <input ng-model="newEnquiry.email" class="form-control" placeholder="Enter Your email" id="email" type="text" name="email" required>                
                               </div>
                         </div>
                   </div>
@@ -85,11 +85,26 @@
                      <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label>Date of Birth</label>
-                                <div ng-model="newEnquiry.dob"><select class="form-control date-select" name="date" ng-model="newEnquiry.gender" required><option></option>
-                                 
-                                </select>
-                                <select class="form-control date-select" name="month" ng-model="newEnquiry.gender" required><option></option></select>
-                                <select class="form-control date-select" name="year" ng-model="newEnquiry.gender" required><option></option></select></div>
+                                <div ng-model="newEnquiry.dob">
+                                  <select class="form-control date-select" name="date" ng-model="newEnquiry.dob[2]" required>
+                                    <option value="">Select</option>
+                                    <?php for($i=1;$i<=31;$i++){?>
+                                    <option value="<?= $i?>"><?= $i?></option>
+                                    <?php }?>
+                                  </select>
+                                  <select class="form-control date-select" name="month" ng-model="newEnquiry.dob[1]" required>
+                                    <option value="">Select</option>
+                                    <?php for($i=1;$i<=12;$i++){?>
+                                    <option value="<?= $i?>"><?= $i?></option>
+                                    <?php }?>
+                                  </select>
+                                  <select class="form-control date-select" name="year" ng-model="newEnquiry.dob[0]" required>
+                                    <option value="">Select</option>
+                                    <?php for($i=1950;$i<=date('Y');$i++){?>
+                                    <option value="<?= $i?>"><?= $i?></option>
+                                    <?php }?>
+                                  </select>
+                                </div>
                                 
                                 <!-- <input ng-model="newEnquiry.dob" class="form-control" placeholder="Date of Birth" type="text" onfocus="(this.type='date')" id="dob"  name="dob" ng-model="newEnquiry.gender" required>  -->               
                               </div>
@@ -97,7 +112,10 @@
                     <div class="col-sm-6">
                           <div class="form-wrap">
                             <label>Current Location</label>
-                            <input ng-model="newEnquiry.zip" class="form-control" placeholder="Where do you stay in Chennai(Pincode)" id="pin" type="text" name="pin" required>                
+                            <input autocomplete="off" ng-click="$event.stopPropagation();pageInfo.showcity = true" ng-model="newEnquiry.zip" class="form-control" placeholder="Where do you stay in Chennai(Pincode)" id="pin" type="text" name="pin" required> 
+                            <div class="citylist" ng-show="pageInfo.showcity">
+                              <span ng-repeat="city in citylist | filter: newEnquiry.zip" ng-click="setCity(city);pageInfo.showcity = false;">{{city}}</span>
+                            </div>               
                           </div>
                     </div>
                   </div>
@@ -198,7 +216,7 @@
 
                 <div class="row">
                 <div class="col-sm-12">
-                  <p><input ng-model="newEnquiry.tnc" required="" type="checkbox" name="tnc"> I accept the <a href="#">Terms & conditions</a> and allow Chennai Banking to call or send message.</p>
+                  <p><input ng-model="newEnquiry.tnc" required="" type="checkbox" name="tnc" checked="checked"> I accept the <a href="#">Terms & conditions</a> and allow Chennai Banking to call or send message.</p>
                   <button class="button button-sm button-primary" ng-click="submitForm();" type="submit">Submit</button>
                 </div>
               </div>
