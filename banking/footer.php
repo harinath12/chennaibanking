@@ -36,7 +36,7 @@
               <span class="vertical">960-000-0011</span></a>
             </li>
             <li class=" phone">
-              <a href="https://wa.me/9894429046"><span><label for="" class="side-contact fa fa-whatsapp" aria-hidden="true"></label></span>
+              <a href="https://wa.me/9876543210"><span><label for="" class="side-contact fa fa-whatsapp" aria-hidden="true"></label></span>
               <span class="vertical">960-000-0011</span></a>
             </li>
             <li>

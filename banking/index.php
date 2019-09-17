@@ -200,7 +200,7 @@ echo do_shortcode('[smartslider3 slider=2]');
       </section>
 
       <!-- A Few Words About Us-->
-      <section class="section section-lg section-image-relative bg-gray-100">
+      <section class="section section-lg section-image-relative ">
         <div class="container text-center text-xl-left">
           <div class="row justify-content-center justify-content-xl-start">
             <div class="col-md-10 col-xl-6">

@@ -32,7 +32,7 @@ color: white;
 }
 .date-select{
     display: inline-block;
-    width: 15%;
+    width: 32%;
 }
 .que-form a{
 color: white;
@@ -178,7 +178,12 @@ text-decoration: underline;
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 input[type="tel"],
-.wpcf7 textarea
+.wpcf7 textarea,
+.strong-form input[type="text"], 
+.strong-form input[type="email"],
+.strong-form input[type="url"], 
+.strong-form select, 
+.strong-form textarea
 {
    display: block;
     width: 100%;
@@ -221,7 +226,7 @@ text-decoration: underline;
     transition: 250ms all ease-in-out;
     box-shadow: 0 3px 21px 4px rgba(41, 41, 58, 0.2);
 }
-.wpcf7 label{
+.wpcf7 .field-client_name label{
 	font-weight: 600;
 }
  .wpcf7 p{
@@ -270,6 +275,7 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     width: 100%;
     margin: 0;
   }
+
 }
 .citylist{
     position: absolute;
@@ -279,6 +285,7 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     color: #000;
     width: 100%;
     overflow: auto;
+    z-index: 999;
 }
 .citylist span{
   display: block;
@@ -292,4 +299,14 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     color: white;
     margin-bottom: 10px;
     text-align: center;
+  }
+.bg-gray-100{
+    background-size: cover;
+    background-position: center;
+  }
+  .rd-navbar-static.rd-navbar--is-stuck, .rd-navbar-static.rd-navbar--is-clone{
+        box-shadow: 0px 0px 5px!important;
+  }
+  .rd-navbar-wrap, .rd-navbar, .rd-menu, .rd-navbar-nav, .rd-navbar-panel, .rd-navbar-static .rd-menu, .rd-navbar-fixed .rd-navbar-nav-wrap, .rd-navbar-fixed .rd-navbar-submenu{
+    transition: none!important;
   }

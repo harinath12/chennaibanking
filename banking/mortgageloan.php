@@ -87,19 +87,19 @@
                                 <label>Date of Birth</label>
                                 <div ng-model="newEnquiry.dob">
                                   <select class="form-control date-select" name="date" ng-model="newEnquiry.dob[2]" required>
-                                    <option value="">Select</option>
+                                    <option value="">dd</option>
                                     <?php for($i=1;$i<=31;$i++){?>
                                     <option value="<?= $i?>"><?= $i?></option>
                                     <?php }?>
                                   </select>
                                   <select class="form-control date-select" name="month" ng-model="newEnquiry.dob[1]" required>
-                                    <option value="">Select</option>
+                                    <option value="">mm</option>
                                     <?php for($i=1;$i<=12;$i++){?>
                                     <option value="<?= $i?>"><?= $i?></option>
                                     <?php }?>
                                   </select>
                                   <select class="form-control date-select" name="year" ng-model="newEnquiry.dob[0]" required>
-                                    <option value="">Select</option>
+                                    <option value="">yyyy</option>
                                     <?php for($i=1950;$i<=date('Y');$i++){?>
                                     <option value="<?= $i?>"><?= $i?></option>
                                     <?php }?>
