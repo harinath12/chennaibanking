@@ -56,7 +56,7 @@
     <script src="<?php bloginfo('template_url');?>/js/emicalc-main.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/controller.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+     <script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
 
     <?php wp_footer(); ?>
     <script>
@@ -177,6 +177,18 @@ $(document).ready(function(){
         }]
     });
 });
+
+
+    $(document).on("scroll", function(){
+        if
+      ($(document).scrollTop() > 86){
+          $("#banner").addClass("shrink");
+        }
+        else
+        {
+            $("#banner").removeClass("shrink");
+        }
+    });
 
 </script>
   </body>

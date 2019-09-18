@@ -158,9 +158,7 @@ text-decoration: underline;
 }
 .logo{
 	float: left;
-	width: 200px;
-    
-}
+	}
 .rd-navbar.navig{
     float: right;
 }
@@ -313,9 +311,38 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
   .strong-form .after{
     display: none!important;
   }
-.context-dark, .context-dark h1, .context-dark h2, .context-dark h3, .context-dark h4, .context-dark h5, .context-dark h6, .context-dark [class^='heading-']{
+.context-dark h1, .context-dark h2, .context-dark h3, .context-dark h4, .context-dark h5, .context-dark h6, .context-dark [class^='heading-']{
     padding: 0 15px;
 }
 .modal-open .modal{
   z-index: 9999;
+}
+.logo img{
+    height: auto;
+    width: 270px!important;
+}
+.ecww-tenure-choice{
+  display: none;
+}
+.form-wrap p{
+  margin-top: 0!important;
+}
+.customer-logos .slide {
+  background: #fff;
+  widows: 150px;
+  height: 100px;
+  position: relative;
+}
+.customer-logos .slide img{
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin:auto;
+  padding: 10px
 }

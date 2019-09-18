@@ -171,7 +171,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                             <div class="form-wrap">
-                              <label>Do you have any existing Credit card?</label> 
+                              <label>Are you paying any monthly EMI?</label> 
                                 <p><label class="rediobtn">Yes
                                   <input type="radio" ng-model="newEnquiry.cc" value="Yes" name="cc">
                                   <span class="checkmark"></span>
