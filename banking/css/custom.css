@@ -260,7 +260,33 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
 }
 
 @media only screen and (max-width: 600px) {
-	.col-md-3 .col-sm-6 .col-xs-6{
+  body{
+    margin-top: 80px;
+  }
+  .logo{
+    float: left;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    background: #fff;
+    z-index: 999;
+    box-shadow: 0px 0px 5px!important;
+    margin-left: 0;
+  }
+body .logo img{
+  width: 200px!important;
+}
+
+.customer-logos .slide{
+  height: 55px!important;
+}
+.strong-view.default .testimonial-image{
+  width: 100%;
+  text-align: center;
+}
+  .col-md-3 .col-sm-6 .col-xs-6{
 		width: 50%;
 	}
   .modal{
@@ -272,6 +298,9 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     left: 0;
     width: 100%;
     margin: 0;
+  }
+  .vericaltext{
+    display: none!important;
   }
 
 }
@@ -360,4 +389,7 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     color: #fff;
     font-weight: bold;
     line-height: 1;   
+}
+.strong-view.default .testimonial-heading{
+  background: none;
 }
