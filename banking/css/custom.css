@@ -261,7 +261,7 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
 
 @media only screen and (max-width: 600px) {
   body{
-    margin-top: 80px;
+    margin-top: 70px;
   }
   .logo{
     float: left;
@@ -274,6 +274,7 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     z-index: 999;
     box-shadow: 0px 0px 5px!important;
     margin-left: 0;
+    padding: 15px;
   }
 body .logo img{
   width: 200px!important;
@@ -348,7 +349,8 @@ body .logo img{
 }
 .logo img{
     height: auto;
-    width: 270px!important;
+    width: 230px!important;
+    padding: 5px;
 }
 .ecww-tenure-choice{
   display: none;
