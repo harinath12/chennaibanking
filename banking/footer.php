@@ -28,7 +28,7 @@
       </footer>
     </div>  
     <div class="snackbars" id="form-output-global"></div>
-
+    <span class="vericaltext">Contact Us</span></a>
     <div class="sticky-container">
           <ul class="sticky">
             <li class=" phone">

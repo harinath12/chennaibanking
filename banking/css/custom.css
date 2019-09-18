@@ -346,3 +346,18 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
   margin:auto;
   padding: 10px
 }
+.vericaltext{
+    width:40px;
+    word-wrap: break-word;
+    margin: -152px -53px;
+    position: fixed;
+    right: 53px;
+    top: calc(100% / 2);
+    z-index: 999;
+    background: #0e86ff;
+    padding: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;   
+}
