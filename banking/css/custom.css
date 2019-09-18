@@ -313,3 +313,9 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
   .strong-form .after{
     display: none!important;
   }
+.context-dark, .context-dark h1, .context-dark h2, .context-dark h3, .context-dark h4, .context-dark h5, .context-dark h6, .context-dark [class^='heading-']{
+    padding: 0 15px;
+}
+.modal-open .modal{
+  z-index: 9999;
+}
