@@ -42,8 +42,8 @@
        </div>
       </div> 
         <div class="modal-body"> 
-          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='<?php the_title(); ?>'">
-            <h5><b>Get the best Loan that suits your requirement by filling the below Details.</b></h5>
+          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='Credit Card'">
+            <h5><b>Get the best Card that suits your requirement by filling the below Details.</b></h5>
               <div class="row">
                      <div class="col-sm-6">
                               <div class="form-wrap">
@@ -59,7 +59,7 @@
                                     <span class="checkmark"></span>
                                   </label>
                                   <label class="rediobtn">Female
-                                    <input value="Female" type="radio"  name="gender">
+                                    <input value="Female" type="radio" checked="checked" name="gender">
                                     <span class="checkmark"></span>
                                   </label></p>
                               </div>
