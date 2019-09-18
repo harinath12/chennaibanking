@@ -148,8 +148,7 @@
                           </div>
                     </div>
                   </div>
-                  <div class="row" ng-if="newEnquiry.occupation == 'Salaried'">
-                        
+                  <div class="row" ng-if="newEnquiry.occupation == 'Salaried'">                        
                         <div class="col-sm-6">
                           <div class="form-wrap">
                             <label>Monthly Income</label>
@@ -157,8 +156,7 @@
                             <div id="mincometext"></div>                  
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                              
+                        <div class="col-sm-6">                              
                           <div class="form-wrap">
                             <label>I receive Salary By</label>
                             <select class="form-control" required  ng-model="newEnquiry.salary_by">
@@ -169,9 +167,7 @@
                             </select>
                           </div>
                         </div>
-                  </div>
-
-                  
+                  </div>                  
                 <div class="row">
                     <div class="col-sm-6">
                             <div class="form-wrap">
