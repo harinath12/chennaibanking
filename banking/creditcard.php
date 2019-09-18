@@ -43,7 +43,7 @@
       </div> 
 
         <div class="modal-body"> 
-          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='Credit Card'">
+          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='<?php the_title(); ?>'">
             <h5><b>Get the best Card that suits your requirement by filling the below Details.</b></h5>
               <div class="row">
                      <div class="col-sm-6">
