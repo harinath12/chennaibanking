@@ -59,7 +59,7 @@
                                     <span class="checkmark"></span>
                                   </label>
                                   <label class="rediobtn">Female
-                                    <input value="Female" type="radio" checked="checked" name="gender">
+                                    <input value="Female" type="radio"  name="gender">
                                     <span class="checkmark"></span>
                                   </label></p>
                               </div>

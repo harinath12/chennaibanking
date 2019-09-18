@@ -177,14 +177,14 @@
                     <div class="col-sm-6">
                             <div class="form-wrap">
                               <label>Do you have any existing Credit card?</label> 
-                                <label class="rediobtn">Yes
+                                <p><label class="rediobtn">Yes
                                   <input type="radio" ng-model="newEnquiry.cc" value="Yes" name="cc">
                                   <span class="checkmark"></span>
                                 </label>
                                 <label class="rediobtn">No
                                   <input type="radio" ng-model="newEnquiry.cc" value="No" name="cc">
                                   <span class="checkmark"></span>
-                                </label>          
+                                </label> </p>        
                             </div>
                      </div>                      
                 </div>
