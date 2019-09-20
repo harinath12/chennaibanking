@@ -32,8 +32,19 @@
                 </div>
                 <div ng-if="pageInfo.mobileVerified == 2 || pageInfo.mobileVerified == 4">
                   <div class="form-wrap">
+                    <div>
+                      <label>Mobile Number</label>
+                      <input ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
+                    </div>
                   <input ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
+
                   <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            
+                  </div>
+                  <div>
+                    <button class="button button-sm button-primary" ng-click="submitForm();" type="submit">Resend OTP</button>
+                    <button class="button button-sm button-primary" ng-click="submitForm();" type="submit">Change Mobile Number</button>
+
+
                   </div>
                 </div>
             </div>
