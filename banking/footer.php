@@ -28,7 +28,7 @@
       </footer>
     </div>  
     <div class="snackbars" id="form-output-global"></div>
-    <div class="vericaltext">Contact Us</div>
+    <div id="wpcs_tab_12940" class="wpcs_tab " aria-label="Contact Us" style="opacity: 1;">Contact Us</div>
     <div class="sticky-container">
           <ul class="sticky">
             <li class=" phone">
@@ -48,6 +48,17 @@
     </div>
     <script type="text/javascript">
         var ajaxurl = "<?= site_url('wp-admin/admin-ajax.php?action=');?>";
+
+        <?php
+        $banks = get_option('cb_area');
+        $banks = $banks ? $banks : [];
+        $nbank = [];
+
+        foreach ($banks as $key => $value) {
+            $nbank[] = $value['pin'].' '.$value['name'];
+        }
+        ?>
+        var citylist = <?= json_encode($nbank)?>;
     </script>
     <!-- Javascript-->
     <script src="<?php bloginfo('template_url');?>/js/core.min.js"></script>

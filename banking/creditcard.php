@@ -38,7 +38,7 @@
                       <label ng-show="pageInfo.changemobilenumber">Mobile Number</label>
                       <input ng-show="pageInfo.changemobilenumber" ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
                         </div>
-                        <p ng-hide="pageInfo.changemobilenumber">We have sent an OTP to   mobile number</p>
+                        <p ng-hide="pageInfo.changemobilenumber">We have sent an OTP to {{newEnquiry.mobile}}</p>
                       <input ng-hide="pageInfo.changemobilenumber" ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
 
                       <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            
@@ -104,7 +104,7 @@
                                 <div ng-model="newEnquiry.dob">
                                   <select class="form-control date-select" name="date" ng-model="newEnquiry.dob[2]" required>
                                     <option value="">dd</option>
-                                    <?php for($i=1;$i<=31;$i++){?>
+                                    <?php for($i=01;$i<=31;$i++){?>
                                     <option value="<?= $i?>"><?= $i?></option>
                                     <?php }?>
                                   </select>
@@ -210,11 +210,17 @@
                             <label>Choose bank name</label>
                             <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " ng-model="newEnquiry.banks"  class="selectpicker w-100">
                           <option value="">Choose bank name</option>
-                          <option>State bank of India</option>
-                          <option>ICICI Bank</option>
-                          <option>HDFC Bank</option>
-                          <option>Germany</option>
-                          <option>Italy</option>
+                         <?php
+                          $banks = get_option('cb_banks');
+                          $banks = $banks ? $banks : [];
+                          $nbank = [];
+
+                          foreach ($banks as $key => $value) {
+                              ?><option><?= $value['name'];?></option>
+                              <?php
+                          }
+                          ?>
+                          
                       </select>               
                           </div>
                     </div>

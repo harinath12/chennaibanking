@@ -65,20 +65,38 @@ function cb_new_enquiry(){
 		$body = '<h3>Hi Admin,</h3>';
 		$body .= "<p><b>Lead ID</b>: $lid</p>";
 
-		foreach ($data as $key => $value) {
-			$body .= "<p><b>$key</b>: $value</p>";
-			/*<p>Lead ID:
-			Name: 
-			Email:
-			Mobile:
-			Gender:
-			Dob:
-			ZIP:
-			Occupation:
-			Existing Creditcard: 
-			Preferred Language:*/
+		$body .= "<p><b>Name: </b>: ".$data['name']."</p>
+			<p><b>Email:</b>: ".$data['email']."</p>
+			<p><b>Mobile:</b>: ".$data['mobile']."</p>
+			<p><b>Gender:</b>: ".$data['gender']."</p>
+			<p><b>Dob:</b>: ".$data['dob']."</p>
+			<p><b>ZIP:</b>: ".$data['zip']."</p>
+			<p><b>Occupation:</b>: ".$data['occupation']."</p>";
+		
+
+		if($data['occupation'] == 'Salaried'){
+			$body .= "<p><b>Company Name: </b>: ".$data['company']."</p>";
+			$body .= "<p><b>Monthly Income: </b>: ".$data['monthly']."</p>";
+			$body .= "<p><b>I receive Salary By: </b>: ".$data['salary_by']."</p>";
+		} elseif($data['occupation'] == 'Self Employed'){
+			$body .= "<p><b>Latest Year Income after Tax: </b>: ".$data['income']."</p>";	
 		}
-		 
+
+		if($data['etype'] == 'Credit Card'){
+			$body .= "<p><b>Existing Creditcard: </b>: ".$data['cc']."</p>";
+			if($data['cc'] == 'Yes'){
+				$body .= "<p><b>Banks: </b>: ".implode(",", $data['banks'])."</p>";
+				$body .= "<p><b>Credit Limit: </b>: ".$data['creditlimit']."</p>";
+			}
+		} else{
+			$body .= "<p><b>Are you paying any monthly EMI?: </b>: ".$data['cc']."</p>";
+			if($data['cc'] == 'Yes'){
+				$body .= "<p><b>Total amount of EMIs you currently pay per month: </b>: ".$data['creditlimit']."</p>";
+			}
+		}
+
+		$body .= "<p><b>Preferred Language: </b>: ".($data['language'] == 'Others' ? $data['otherlanguage'] : $data['language'])."</p>";
+
 		wp_mail( $to, $subject, $body );
 		$data = array('status' => 'Success', 'id' => $id);
 	} else {

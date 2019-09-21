@@ -35,6 +35,7 @@
                       <label ng-show="pageInfo.changemobilenumber">Mobile Number</label>
                       <input ng-show="pageInfo.changemobilenumber" ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
                         </div>
+                        <p ng-hide="pageInfo.changemobilenumber">We have sent an OTP to {{newEnquiry.mobile}}</p>
                       <input ng-hide="pageInfo.changemobilenumber" ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
 
                       <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            

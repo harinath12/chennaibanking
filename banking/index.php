@@ -152,33 +152,34 @@ echo do_shortcode('[smartslider3 slider=2]');
             <div class="col-md-6 col-lg-3 wow fadeInRight">
               <div class="list-icon list-icon-white">
                 <div class="list-icon-title"><span class="icon-item thin-icon-map-marker"></span>
-                  <div class="title">Various Locations</div>
+                  <div class="title">Door step banking services</div>
                 </div>
-                <div class="list-icon-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.</div>
+                <div class="list-icon-body">Apply any financial product with us online. We will collect the documents ASAP either via online or at your doorstep. You need not visit any bank.
+                </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeInRight" data-wow-delay="0.1s">
               <div class="list-icon list-icon-white">
                 <div class="list-icon-title"><span class="icon-item thin-icon-mobile"></span>
-                  <div class="title">Mobile Banking Apps</div>
+                  <div class="title">Quick processing and faster approval</div>
                 </div>
-                <div class="list-icon-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.</div>
+                <div class="list-icon-body">We process your loan application immediately without any delay and help you to get the loan amount disburse on time in your account.</div>
               </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeInRight" data-wow-delay="0.2s">
               <div class="list-icon list-icon-white">
                 <div class="list-icon-title"><span class="icon-item mercury-icon-social"></span>
-                  <div class="title">Family Programs</div>
+                  <div class="title">Compare offers with multiple bank</div>
                 </div>
-                <div class="list-icon-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.</div>
+                <div class="list-icon-body">We help you to explore the financial product you need and compare the offers with different banks</div>
               </div>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeInRight" data-wow-delay="0.3s">
               <div class="list-icon list-icon-white">
                 <div class="list-icon-title"><span class="icon-item thin-icon-support"></span>
-                  <div class="title">24/7 Support</div>
+                  <div class="title">100% free service no charge</div>
                 </div>
-                <div class="list-icon-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.</div>
+                <div class="list-icon-body">We do not charge anything out of our customers pocket. All the services offered by us are 100% free of cost.</div>
               </div>
             </div>
           </div>
@@ -191,9 +192,9 @@ echo do_shortcode('[smartslider3 slider=2]');
           <div class="container">
             <div class="box-cta">
               <div class="box-cta-inner">
-                <h3>Choose Your <span class="font-weight-bold">Bank Card</span> Now!</h3>
+                <h3>Choose Your <span class="font-weight-bold">Personal Loan</span> Now!</h3>
               </div>
-              <div class="box-cta-inner"><a class="button button-lg button-white" href="#">Order Card</a></div>
+              <div class="box-cta-inner"><a class="button button-lg button-white" href="<?= site_url('personal-loan');?>">Apply Now</a></div>
             </div>
           </div>
         </div>
