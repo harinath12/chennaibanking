@@ -8,6 +8,13 @@ add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
   register_nav_menu( 'primary', __( 'Primary Menu', 'theme-slug' ) );
 }
+
+add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+
+    function wpdocs_set_html_mail_content_type() {
+        return 'text/html';
+    }
+
 class Lead_List_Table extends WP_List_Table {
 	function __construct(){
         global $status, $page;
@@ -82,6 +89,8 @@ class Lead_List_Table extends WP_List_Table {
             /*$3%s*/ $this->row_actions($actions)
         );
     }
+
+
 
     function column_cb($item){
         return sprintf(

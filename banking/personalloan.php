@@ -7,8 +7,8 @@
         <div class="container context-dark breadcrumb-wrapper">
           <h3><?php the_title(); ?></h3>
           <ul class="breadcrumbs-custom">
-            <li><a href="index.html">Home</a></li>           
-            <li class="active">Personal Loan</li>
+            <li><a href="<?= site_url();?>">Home</a></li>           
+            <li class="active"><?php the_title(); ?></li>
           </ul>
         </div>
 </section>
@@ -26,14 +26,24 @@
                 <h4 class="modal-title" ng-if="pageInfo.mobileVerified != 1">Verify OTP</h4>
               </div>
               <div class="modal-body modal-pop"> 
-                {{pageInfo.mobileVerified}}
-                <div ng-if="pageInfo.mobileVerified == 1">
+                 <div ng-if="pageInfo.mobileVerified == 1">
                   <p>Mobile Number Verified, Thank you for submitting your details. Our executive will get in touch with you shortly!</p>
                 </div>
                 <div ng-if="pageInfo.mobileVerified == 2 || pageInfo.mobileVerified == 4">
                   <div class="form-wrap">
-                  <input ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
-                  <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            
+                    <div>
+                      <label ng-show="pageInfo.changemobilenumber">Mobile Number</label>
+                      <input ng-show="pageInfo.changemobilenumber" ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
+                        </div>
+                      <input ng-hide="pageInfo.changemobilenumber" ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
+
+                      <p ng-if="pageInfo.mobileVerified == 4"><i class="fa fa-close"></i> Invalid OtP</p>            
+                  </div>
+                  <div>
+                    <button ng-hide="pageInfo.changemobilenumber" class="button button-sm button-primary"  ng-click="send_otp();" type="submit">Resend OTP</button>
+                    <button ng-hide="pageInfo.changemobilenumber" class="button button-sm button-primary chgmbl" ng-click="pageInfo.changemobilenumber = true;" type="submit">Change Mobile Number</button>
+                    <button ng-show="pageInfo.changemobilenumber" class="button button-sm button-primary" ng-click="send_otp();" type="submit">Send OTP</button>
+
                   </div>
                 </div>
             </div>

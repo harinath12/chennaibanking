@@ -50,8 +50,37 @@ function cb_new_enquiry(){
 
 	$res = $wpdb->insert('wp_enquiry', $data);
 
+
+
 	if($res){
-		$data = array('status' => 'Success', 'id' => $wpdb->insert_id);
+		$id = $wpdb->insert_id;
+		$lid = 1000000000+$id;
+
+		$wpdb->update('wp_enquiry', array('lead_id' => $lid), array('id' => $id));
+
+		$to = 'harinathr.ism@gmail.com';
+		$subject = $lid.' '.$data['etype'].' Lead';
+
+
+		$body = '<h3>Hi Admin,</h3>';
+		$body .= "<p><b>Lead ID</b>: $lid</p>";
+
+		foreach ($data as $key => $value) {
+			$body .= "<p><b>$key</b>: $value</p>";
+			Lead ID:
+			Name: 
+			Email:
+			Mobile:
+			Gender:
+			Dob:
+			ZIP:
+			Occupation:
+			Existing Creditcard: 
+			Preferred Language:
+		}
+		 
+		wp_mail( $to, $subject, $body );
+		$data = array('status' => 'Success', 'id' => $id);
 	} else {
 		$data = array('status' => 'Error', 'msg' => 'Error while saving this enquiry. Please try again');
 	}

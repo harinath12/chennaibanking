@@ -153,6 +153,10 @@ $(document).ready(function(){
   $(document).on('click', '.wpmslider-controls-direction a', function(e){
     e.preventDefault();
   });
+
+   $("#onload").on("hidden.bs.modal", function () {
+            window.location.reload();
+        });
 });
 
 $(document).ready(function(){
@@ -188,7 +192,12 @@ $(document).ready(function(){
         {
             $("#banner").removeClass("shrink");
         }
+    
+       
+
     });
+
+
 
 </script>
   </body>

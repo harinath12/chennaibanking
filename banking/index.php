@@ -383,6 +383,16 @@ echo do_shortcode('[smartslider3 slider=2]');
           </div>
           <form ng-if="!pageInfo.enquirydone" name="pageInfo.referform" method="post" ng-class="{formSubmitted: pageInfo.formSubmitted}">
             <div class="row">
+              <div class="col-sm-12 text-center" style="padding: 20px 0;">
+                 <div class="">
+                    <img src="<?php bloginfo('template_url');?>/images/refer-a-friend-icon-png-6.jpg">
+                  </div>
+                  <div class="refer-text">
+                    <h4 class="blink_me">The More You Refer</h4>
+                    <h4 class="blink_me">The More You Earn</h4>
+                    <p>Refer your friends/family members and get upto <b class="blink_me"><i class="fa fa-inr"></i>30000</b> per successful disbursal.</p>
+                  </div>
+              </div>
               <div class="col-sm-6">
                 <div>
                   <h4 class="margin-bottom">Your Details</h4>

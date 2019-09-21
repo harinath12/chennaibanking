@@ -10,13 +10,13 @@ angular.module('cbApp', [])
 		$scope.pageInfo.formSubmitted = true;
 
 		if($scope.pageInfo.enquiryform.$valid){
-			httpService.post(ajaxurl+'cb_new_enquiry', $scope.newEnquiry).then(function(res){
-				if(res.status == 'Success'){
+			httpService.post(ajaxurl+'cb_new_enquiry', $scope.newEnquiry).then(function(res1){
+				if(res1.status == 'Success'){
 					httpService.post(ajaxurl+'cb_verify_otp', {mobile: $scope.newEnquiry.mobile}).then(function(res){
 						if(res.status == 'Success'){
 							$scope.pageInfo.otp = atob(res.res);
 							$scope.pageInfo.mobileVerified = 2;
-							$scope.logid = res.id;
+							$scope.logid = res1.id;
 							$('#onload').modal('show');
 						} else {
 							$scope.pageInfo.mobileVerified = 3;
@@ -28,7 +28,15 @@ angular.module('cbApp', [])
 	};
 
 	$scope.send_otp = function(){
-		
+		httpService.post(ajaxurl+'cb_verify_otp', {mobile: $scope.newEnquiry.mobile}).then(function(res){
+			if(res.status == 'Success'){
+				$scope.pageInfo.otp = atob(res.res);
+				$scope.pageInfo.mobileVerified = 2;
+				$scope.pageInfo.changemobilenumber = false;
+			} else {
+				$scope.pageInfo.mobileVerified = 3;
+			}
+		});
 	};
 
 	$scope.setCity = function(city){
@@ -48,7 +56,7 @@ angular.module('cbApp', [])
 	};
 
 	$scope.pageInfo = {formSubmitted : false, showcity: false};
-	$scope.pageInfo.mobileVerified = 0;
+	$scope.pageInfo.mobileVerified =0;
 	$scope.pageInfo.otp = false;
 	$scope.pageInfo.enquirydone = false;
 })

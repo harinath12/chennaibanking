@@ -395,3 +395,23 @@ body .logo img{
 .strong-view.default .testimonial-heading{
   background: none;
 }
+.blink_me {
+  animation: blinker 2s linear infinite;
+  color: #697718;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.refer-text{
+margin-top: 20px;
+}
+.refer-text p{
+padding: 0px 15px;
+}
+.chgmbl{
+  margin-top: 0!important;
+  float: right;
+}
