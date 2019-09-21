@@ -16,7 +16,7 @@ function cb_verify_otp(){
 
 	$msg = urlencode('Your OTP - '. $otp .' for chennaibanking enquiry');
 
-	$content = (array) json_decode(file_get_contents('http://online.chennaisms.com/api/mt/SendSMS?user=sarath.itrocker&password=india123&senderid=SARATH&channel=Trans&DCS=0&flashsms=0&number=91'.$mobile.'&text='.$msg.'&route=6'));
+	$content = (array) json_decode(file_get_contents('http://online.chennaisms.com/api/mt/SendSMS?user=sarath.itrocker&password=india123&senderid=CHNBNK&channel=Trans&DCS=0&flashsms=0&number=91'.$mobile.'&text='.$msg.'&route=6'));
 
 	if($content['ErrorMessage'] == 'Done'){
 		$data = array('status' => 'Success', 'res' => base64_encode($otp));
@@ -67,7 +67,7 @@ function cb_new_enquiry(){
 
 		foreach ($data as $key => $value) {
 			$body .= "<p><b>$key</b>: $value</p>";
-			Lead ID:
+			/*<p>Lead ID:
 			Name: 
 			Email:
 			Mobile:
@@ -76,7 +76,7 @@ function cb_new_enquiry(){
 			ZIP:
 			Occupation:
 			Existing Creditcard: 
-			Preferred Language:
+			Preferred Language:*/
 		}
 		 
 		wp_mail( $to, $subject, $body );
