@@ -20,7 +20,7 @@
     margin-bottom: -6px;
     background: #0d82fa;
     color: white;
-    padding: 5px;
+    padding: 12px;
     margin-top: 15px;
 }
 .que-form{
@@ -440,4 +440,33 @@ div#wpcs_tab_12940 {
     padding: 6px 0px 2px 0px !important;
     height: 45px !important;
     font-weight: 600;
+}
+
+.counter
+{
+    background-color: #eaecf0;
+    text-align: center;
+}
+
+.counter-count, .cratings{
+    font-size: 24px;
+    border-radius: 50%;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    line-height: 92px;
+    width: 92px;
+    height: 92px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: inline-block;
+    background-image: linear-gradient(to right, #0e86ff, #0346aac7);
+}
+
+.employee-p{
+    font-size: 20px;
+    color: #000000;
+    line-height: 34px;
 }

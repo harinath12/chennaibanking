@@ -104,14 +104,17 @@
                                 <div ng-model="newEnquiry.dob">
                                   <select class="form-control date-select" name="date" ng-model="newEnquiry.dob[2]" required>
                                     <option value="">dd</option>
-                                    <?php for($i=01;$i<=31;$i++){?>
-                                    <option value="<?= $i?>"><?= $i?></option>
+                                    <?php 
+                                    for($i=01;$i<=31;$i++){?>
+                                    <option value="<?= $i < 10 ? '0'.$i : $i?>"><?= $i < 10 ? '0'.$i : $i?></option>
                                     <?php }?>
                                   </select>
                                   <select class="form-control date-select" name="month" ng-model="newEnquiry.dob[1]" required>
                                     <option value="">mm</option>
-                                    <?php for($i=1;$i<=12;$i++){?>
-                                    <option value="<?= $i?>"><?= $i?></option>
+                                    <?php 
+                                    $month = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' );
+                                    for($i=0;$i<12;$i++){?>
+                                    <option value="<?= $month[$i]?>"><?= $month[$i]?></option>
                                     <?php }?>
                                   </select>
                                   <select class="form-control date-select" name="year" ng-model="newEnquiry.dob[0]" required>

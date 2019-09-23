@@ -1,6 +1,7 @@
 <?php get_header();?>
       <!-- Swiper-->
-       <marquee class="marquee">Best banking services. Attractive offers. Free service &  quick response. Digital & doorstep services. Only  for Chennai Customers. Quality financial suggestion</marquee>
+       <marquee class="marquee"><b>Our offers : Get upto 30 lakhs personal loan @10.99% rate of interest. Get upto 10 crore rupees as home loan with lowest interest rate. Get life time free credit card with attractive cash back offers. Refer someone for loan and get upto 30k rupees as commission per referral. Click on the product you want to apply for.</b></marquee>
+
       <section class="block-preview slider">
       <!--  <?php 
 echo do_shortcode('[smartslider3 slider=2]');
@@ -207,24 +208,30 @@ echo do_shortcode('[smartslider3 slider=2]');
             <div class="col-md-10 col-xl-6">
               <div class="text-block-3">
                 <h2 class="wow fadeIn">A Few Words About Us</h2>
-                <h6 class="wow fadeIn">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h6>
-                <p class="wow fadeIn">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum has been the industry's standard dummy text ever since the 1500s,.</p>
+                <h6 class="wow fadeIn"><b>Chennaibanking.com</b> is a start-up company which provides the best financial suggestion to their customers and was especially started for people in Chennai. We provide the best end to end customer support. We are tied up with various banks, so that our customers can easily compare and choose the right product of their choice. We connect borrowers with lenders to help them get the best deal possible. Our motto is to make financial products affordable and easily accessible by everyone. We ensure that you get the best product through the most convenient and hassle-free processes. We do not charge anything from our customers. All our services are 100% free of cost.</p>
               </div>
               <div class="row row-xs-center row-30 text-center">
                 <div class="col-6 col-sm-4">
                   <!-- Circle Progress Bar-->
-                  <div class="progress-bar-circle" data-value="0.25" data-gradient="#00db8e" data-empty-fill="rgba(0,0,0,.1)" data-size="96" data-thickness="2"><span></span></div>
-                  <p class="progress-bar-circle-title">Economy</p>
+                  
+                      <div class="employees">
+                        <p class="counter-count">20</p>
+                        <p class="employee-p">Happy Customers</p>
+                      </div>
                 </div>
-                <div class="col-6 col-sm-4">
+                  <div class="col-6 col-sm-4">
                   <!-- Circle Progress Bar-->
-                  <div class="progress-bar-circle" data-value="0.5" data-gradient="#00db8e" data-empty-fill="rgba(0,0,0,.1)" data-size="96" data-thickness="2"><span></span></div>
-                  <p class="progress-bar-circle-title">Cashback</p>
+                    <div class="employees">
+                      <p class="counter-count">50</p>
+                      <p class="employee-p">Our Subscribers</p>
+                  </div>
                 </div>
                 <div class="col-sm-4">
                   <!-- Circle Progress Bar-->
-                  <div class="progress-bar-circle" data-value="0.75" data-gradient="#00db8e" data-empty-fill="rgba(0,0,0,.1)" data-size="96" data-thickness="2"><span></span></div>
-                  <p class="progress-bar-circle-title">Stability</p>
+                   <div class="employees">
+                      <p class="cratings">4.9</p>
+                      <p class="employee-p">Customer Ratings</p>
+                  </div>
                 </div>
               </div><a class="button button-primary button-lg" href="#">Learn More</a>
             </div>
@@ -323,7 +330,7 @@ echo do_shortcode('[smartslider3 slider=2]');
     <!-- Testimonials-->
       <section class="section section-lg">
         <div class="container text-center">
-          <h2>Testimonials</h2>
+          <h2 class="wow fadeIn">Customer Reviews</h2>
           <?php  echo do_shortcode('[testimonial_view id="1"]'); ?>
            
         </div>

@@ -67,7 +67,8 @@
     <script src="<?php bloginfo('template_url');?>/js/emicalc-main.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="<?php bloginfo('template_url');?>/js/controller.js"></script>
-     <script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
+    <script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
+
 
     <?php wp_footer(); ?>
     <script>
@@ -208,6 +209,17 @@ $(document).ready(function(){
 
     });
 
+   $('.counter-count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 5000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
 
 
 </script>
