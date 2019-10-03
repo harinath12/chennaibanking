@@ -12,7 +12,7 @@ echo do_shortcode('[smartslider3 slider=2]');
       <section class="section section-sm section-sm-1 bg-gray-100">
         <div class="container service-container text-center">
           <div class="row row-40">
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('credit-card');?>">
                     <div class="flip-card">
                       <div class="flip-card-inner">
@@ -27,12 +27,27 @@ echo do_shortcode('[smartslider3 slider=2]');
                     </div>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
+              <a href="<?= site_url('business-loan');?>">
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/business_loan.png" alt="">
+                          <div class="subtitle">Business Loan</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
+                    </div>
+              </a>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('personal-loan');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="<?php bloginfo('template_url');?>/images/Instant_Personal_Loan.svg" alt="">
+                          <img src="<?php bloginfo('template_url');?>/images/personal_loan.png" alt="">
                           <div class="subtitle">Personal Loan</div> 
                         </div>
                         <div class="flip-card-back">
@@ -42,7 +57,7 @@ echo do_shortcode('[smartslider3 slider=2]');
                     </div>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('home-loan');?>">
                <div class="flip-card">
                       <div class="flip-card-inner">
@@ -57,7 +72,7 @@ echo do_shortcode('[smartslider3 slider=2]');
                     </div>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('mortgage-loan');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">
@@ -74,7 +89,7 @@ echo do_shortcode('[smartslider3 slider=2]');
             </div>
           </div>
           <div class="row row-40">
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('home-loan');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">
@@ -89,7 +104,7 @@ echo do_shortcode('[smartslider3 slider=2]');
                 </div>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('home-loan');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">
@@ -104,7 +119,7 @@ echo do_shortcode('[smartslider3 slider=2]');
                 </div>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
              <a href="<?= site_url('home-loan');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">
@@ -119,7 +134,22 @@ echo do_shortcode('[smartslider3 slider=2]');
                 </div>
               </a>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="col-md-2 col-sm-6 col-6">
+             <a href="<?= site_url('home-loan');?>">
+                <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="<?php bloginfo('template_url');?>/images/insurance.jpg" alt="">
+                          <div class="subtitle">Insurance</div> 
+                        </div>
+                        <div class="flip-card-back">
+                          <h3>Apply Now</h3> 
+                        </div>
+                      </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6">
               <a href="<?= site_url('emi-calculator');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">

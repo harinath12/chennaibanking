@@ -45,6 +45,7 @@ function cb_new_enquiry(){
 	}
 	$data['dob'] = implode('-', $data['dob']);
 	$data['enquiry_ts'] = date('Y-m-d H:i:s');
+	$data['cab'] = implode(',', $data['cab']);
 	
 	//print_r($data);
 
@@ -58,7 +59,8 @@ function cb_new_enquiry(){
 
 		$wpdb->update('wp_enquiry', array('lead_id' => $lid), array('id' => $id));
 
-		$to = 'harinathr.ism@gmail.com';
+		/*$to = 'harinathr.ism@gmail.com';*/
+		$to = 'leads@chennaibanking.com';
 		$subject = $lid.' '.$data['etype'].' Lead';
 
 
@@ -70,9 +72,16 @@ function cb_new_enquiry(){
 			<p><b>Mobile:</b>: ".$data['mobile']."</p>
 			<p><b>Gender:</b>: ".$data['gender']."</p>
 			<p><b>Dob:</b>: ".$data['dob']."</p>
-			<p><b>ZIP:</b>: ".$data['zip']."</p>
-			<p><b>Occupation:</b>: ".$data['occupation']."</p>";
-		
+			<p><b>ZIP:</b>: ".$data['zip']."</p>";
+
+			if($data['etype'] == 'Business Loan'){
+
+			$body .= "<p><b>Loan Amount Required: </b>: ".$data['lar']."</p>";
+			$body .= "<p><b>Company Type: </b>: ".$data['cmpytype']."</p>";
+			$body .= "<p><b>Current Account Maintained In: </b>: ".$data['cab']."</p>";
+			$body .= "<p><b>Latest year total profit as per ITR:</b>: ".$data['profit']."</p>";
+		}
+		else{
 
 		if($data['occupation'] == 'Salaried'){
 			$body .= "<p><b>Company Name: </b>: ".$data['company']."</p>";
@@ -81,6 +90,7 @@ function cb_new_enquiry(){
 		} elseif($data['occupation'] == 'Self Employed'){
 			$body .= "<p><b>Latest Year Income after Tax: </b>: ".$data['income']."</p>";	
 		}
+	}
 
 		if($data['etype'] == 'Credit Card'){
 			$body .= "<p><b>Existing Creditcard: </b>: ".$data['cc']."</p>";
@@ -112,7 +122,7 @@ function cb_update_verified(){
 
 	$_POST = (array) json_decode(file_get_contents('php://input'));
 
-	$wpdb->insert('wp_enquiry', array('mobile_verified' => 1), array('id' => $_POST['id']));
+	$wpdb->update('wp_enquiry', array('mobile_verified' => 1), array('id' => $_POST['id']));
 
 	$data = array('status' => 'Success');
 	echo json_encode($data);

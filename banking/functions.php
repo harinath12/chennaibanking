@@ -44,8 +44,16 @@ class Lead_List_Table extends WP_List_Table {
             	return $tmp;
             case 'email':
             	return $item['email'].'<br>'.$item['mobile'];
+            case 'lar':
+            if($item['etype'] == 'Business Loan'){
+                 $tmp .='<b>Loan amount Required:</b>'.$item['lar'].'<br>'.'<b>Company Type:</b>'.$item['cmpytype'];
+             }
+                 return $tmp;
             case 'cc':
-	            if($item['etype'] == 'Credit Card'){
+                if($item['etype'] == 'Business Loan'){
+                    $tmp .='<b>Current Account Maintained In:</b>'.$item['cab'].'<br>'.'<b>Latest year profit as per ITR:</b>'.$item['profit'];
+                 }
+	            else if($item['etype'] == 'Credit Card'){
 	            	$tmp = '<b>Exist Credit Card</b> - '.$item['cc'].'<br>';
 	            } else {
 	            	$tmp = '<b>Exist Loan</b> - '.$item['cc'].'<br>';
@@ -107,9 +115,11 @@ class Lead_List_Table extends WP_List_Table {
             'email'    => 'Contact',
             'gender'  => 'About',
             'etype'	=> 'Lead Type',
-            'cc' => 'Existing Card / Emi',
+            'lar' => 'Loan Details',
+            'cc' => 'Account Details',
             'language' => 'Language',
             'enquiry_ts' => 'Enquiry Date'
+
         );
         return $columns;
     }
