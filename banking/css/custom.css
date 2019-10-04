@@ -470,17 +470,8 @@ div#wpcs_tab_12940 {
     color: #000000;
     line-height: 34px;
 }
-.col-md-2{
+.desktop .col-md-2{
   max-width: 20%!important;
+  flex: 0 0 20%!important;
 }
 
-.multiselect-container div.checkbox {
-    margin: 0;
-}
-.multiselect-container label {
-    margin: 0;
-    white-space: nowrap;
-}
-.multiselect-container div.checkbox {
-    padding: 5px 15px 5px 35px;
-}
