@@ -40,8 +40,14 @@ function cb_new_enquiry(){
 		}
 	}
 
+	$banks = array();
 	if($data['banks']){
-		$data['banks'] = serialize($data['banks']);
+		foreach ($data['banks'] as $key => $value) {
+			if($value){
+				$banks[] = $key;
+			}
+		}
+		$data['banks'] = serialize($banks);
 	}
 	$data['dob'] = implode('-', $data['dob']);
 	$data['enquiry_ts'] = date('Y-m-d H:i:s');

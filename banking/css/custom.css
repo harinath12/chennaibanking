@@ -316,7 +316,7 @@ body .logo img{
     overflow: auto;
     z-index: 999;
 }
-.citylist span{
+.citylist > span{
   display: block;
   padding: 5px;
   border:1px solid #ccc;
@@ -417,7 +417,7 @@ padding: 0px 15px;
   float: right;
 }
 div#wpcs_tab_12940 {
-    width: 170px;
+    width: 135px;
     height: 34px;
     overflow: hidden;
     background: #0E86FF;
@@ -425,7 +425,7 @@ div#wpcs_tab_12940 {
     padding: 2px 0px 2px 0px;
     position: fixed;
     top: 200px;
-    right: -68px;
+    right: -50px;
     text-align: center;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -436,7 +436,7 @@ div#wpcs_tab_12940 {
     font-size: 18px;
 }
 .wpcs_tab {
-    top: 220px !important;
+    top: 238px !important;
     padding: 6px 0px 2px 0px !important;
     height: 45px !important;
     font-weight: 600;
@@ -475,3 +475,20 @@ div#wpcs_tab_12940 {
   flex: 0 0 20%!important;
 }
 
+.custom-multiselect{
+    display: inline-block;
+    border: 1px solid #0e86ff;
+    padding: 0 10px;
+    border-radius: 5px;
+    padding-right: 30px;
+    position: relative;
+    margin-left: 5px;
+}
+.custom-multiselect i{
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    color: red;
+    font-style: normal;
+    top: -1px;
+}

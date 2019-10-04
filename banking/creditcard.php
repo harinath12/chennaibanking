@@ -58,7 +58,7 @@
       </div> 
 
         <div class="modal-body"> 
-          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='<?php the_title(); ?>'">
+          <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='<?php the_title(); ?>'" ng-click="pageInfo.showcity=false;pageInfo.showBank=false;">
             <h5><b>Get the best <?php the_title(); ?> that suits your requirement by filling the below Details.</b></h5>
               <div class="row">
                      <div class="col-sm-6">
@@ -211,20 +211,20 @@
                   <div class="col-sm-6">
                           <div class="form-wrap">
                             <label>Choose bank name</label>
-                            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " ng-model="newEnquiry.banks"  class="selectpicker w-100">
-                          <option value="">Choose bank name</option>
+                            <div class="form-control" ng-click="$event.stopPropagation();pageInfo.showBank=true">
+                              <abbr ng-if="selectedBank(newEnquiry.banks) == 0">Choose bank</abbr>
+                              <span ng-repeat="(b,v) in newEnquiry.banks" class="custom-multiselect" ng-show="v">{{b}}<i ng-click="newEnquiry.banks[b]=false" class="fa fa-close"></i></span>
+                            </div>
+                            <div ng-click="$event.stopPropagation();" class="citylist" ng-show="pageInfo.showBank">
                          <?php
                           $banks = get_option('cb_banks');
                           $banks = $banks ? $banks : [];
                           $nbank = [];
 
-                          foreach ($banks as $key => $value) {
-                              ?><option><?= $value['name'];?></option>
-                              <?php
-                          }
-                          ?>
-                          
-                      </select>               
+                          foreach ($banks as $key => $value) {?>
+                            <span><input id="bank<?= $key?>" type="checkbox" ng-model="newEnquiry.banks['<?= $value['name'];?>']"> <label for="bank<?= $key?>"><?= $value['name'];?></label></span>
+                          <?php } ?>
+                            </div>              
                           </div>
                     </div>
                     <div class="col-sm-6">

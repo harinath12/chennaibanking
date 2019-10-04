@@ -5,7 +5,7 @@ angular.module('cbApp', [])
 	$scope.citylist = citylist;
 
 
-	$scope.newEnquiry = {occupation: '',  language: '', salary_by: '', etype: 'Credit Card', mobile_verified: 0, dob: [], tnc:true};
+	$scope.newEnquiry = {occupation: '',  language: '', salary_by: '', etype: 'Credit Card', mobile_verified: 0, dob: [], tnc:true, banks: {}, cab:{}};
 	$scope.submitForm = function(){
 		console.log($scope.newEnquiry, $scope.pageInfo.enquiryform);
 		$scope.pageInfo.formSubmitted = true;
@@ -38,6 +38,20 @@ angular.module('cbApp', [])
 				$scope.pageInfo.mobileVerified = 3;
 			}
 		});
+	};
+
+	$scope.size = function(obj){
+		return Object.size(obj);
+	};
+
+	$scope.selectedBank = function(obj){
+		var cnt = 0;
+		angular.forEach(obj, function(v,k){
+			if(v){
+				cnt++;
+			}
+		});
+		return cnt;
 	};
 
 	$scope.setCity = function(city){
@@ -110,3 +124,11 @@ function httpRestService($http, $q) {
     }
 
 }
+
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
