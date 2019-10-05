@@ -17,6 +17,22 @@
 <section class="que-form" >          
     <div class="container" ng-controller="CCFormController">
 
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="loader">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+                <h4 class="modal-title">Loading... Please wait</h4>
+                
+              </div>
+              <div class="cssload-speeding-wheel"></div>
+            
+          </div>
+
+       </div>
+      </div>
+
       <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="onload">
           <div class="modal-dialog">
             <!-- Modal content-->
@@ -81,7 +97,7 @@
                         <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label>Mobile Number</label>
-                                <input ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
+                                <input ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" maxlength="10" required>
                                 <p ng-if="pageInfo.mobileVerified == 2">OTP Sent to your mobile number. Please verify</p>
                                 <p ng-if="pageInfo.mobileVerified == 3"><i class="fa fa-close"></i> Invalid Mobile Number</p>
                               </div>

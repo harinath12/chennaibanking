@@ -492,3 +492,7 @@ div#wpcs_tab_12940 {
     font-style: normal;
     top: -1px;
 }
+.modal-content .cssload-speeding-wheel{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

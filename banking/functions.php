@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
+
 include WP_CONTENT_DIR . '/themes/banking/ajax.php';
 
 if(!class_exists('WP_List_Table')){
@@ -475,6 +477,133 @@ class Bank_List_Table extends WP_List_Table {
     }
 }
 
+class Insurance_List_Table extends WP_List_Table {
+    function __construct(){
+        global $status, $page;
+                
+        //Set parent defaults
+        parent::__construct( array(
+            'singular'  => 'movie',     //singular name of the listed records
+            'plural'    => 'movies',    //plural name of the listed records
+            'ajax'      => false        //does this table support ajax?
+        ) );
+        
+    }
+
+    function column_default($item, $column_name){
+        $item = (array) $item;
+        switch($column_name){ 
+            default:
+                return $item[$column_name]; //Show the whole array for troubleshooting purposes
+        }
+    }
+
+    function column_title($item){
+        
+        //Build row actions
+        $actions = array(
+            //'edit'      => sprintf('<a href="?page=%s&action=%s&movie=%s">Edit</a>',$_REQUEST['page'],'edit',$item['id']),
+            //'delete'    => sprintf('<a href="?page=%s&action=%s&movie=%s">Delete</a>',$_REQUEST['page'],'delete',$item['id']),
+        );
+        
+        //Return the title contents
+        return sprintf('%1$s <span style="color:silver">(id:%2$s)</span>%3$s',
+            /*$1%s*/ $item['name'],
+            /*$2%s*/ $item['id'],
+            /*$3%s*/ $this->row_actions($actions)
+        );
+    }
+
+    function column_cb($item){
+        return sprintf(
+            '<input type="checkbox" name="%1$s[]" value="%2$s" />',
+            /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label ("movie")
+            /*$2%s*/ $item['id']                //The value of the checkbox should be the record's id
+        );
+    }
+
+    function get_columns(){
+        $columns = array(
+            'cb'        => '<input type="checkbox" />', //Render a checkbox instead of text
+            'name'     => 'Insurance Name'
+        );
+        return $columns;
+    }
+
+    function get_sortable_columns() {
+        $sortable_columns = array(
+            'name'     => array('name',false)
+        );
+        return $sortable_columns;
+    }
+
+    function get_bulk_actions() {
+        $actions = array(
+            'delete'    => 'Delete'
+        );
+        return $actions;
+    }
+
+    function process_bulk_action() {
+        global $wpdb;
+        if( 'delete'===$this->current_action() ) {
+            foreach ($_GET['movie'] as $key => $value) {
+                $banks = get_option('cb_insurance');
+                $banks = $banks ? $banks : [];
+                $newbank = [];
+                foreach ($banks as $key1 => $value1) {
+                    if($value != $value1['id']){
+                        $newbank[] = $value1;
+                    }
+                }
+                update_option('cb_insurance', $newbank);
+            }
+
+            wp_redirect('?page=cb_insurance');
+        }
+        
+    }
+
+    function prepare_items() {
+        global $wpdb; 
+
+        $per_page = 20;
+        
+        $columns = $this->get_columns();
+        $hidden = array();
+        $sortable = $this->get_sortable_columns();
+        
+        $this->_column_headers = array($columns, $hidden, $sortable);
+        
+        $this->process_bulk_action();
+        
+        $data = get_option('cb_insurance');
+
+        $data = $data ? $data : [];
+               
+        function usort_reorder($a,$b){
+            $orderby = (!empty($_REQUEST['orderby'])) ? $_REQUEST['orderby'] : 'title'; 
+            $order = (!empty($_REQUEST['order'])) ? $_REQUEST['order'] : 'asc'; 
+            $result = strcmp($a[$orderby], $b[$orderby]); 
+            return ($order==='asc') ? $result : -$result; 
+        }
+        usort($data, 'usort_reorder');
+        
+        $current_page = $this->get_pagenum();
+        
+        $total_items = count($data);
+        
+        $data = array_slice($data,(($current_page-1)*$per_page),$per_page);
+        
+        $this->items = $data;
+        $this->set_pagination_args( array(
+            'total_items' => $total_items,                  
+            'per_page'    => $per_page,                     
+            'total_pages' => ceil($total_items/$per_page)   
+        ) );
+    }
+}
+
 class Area_List_Table extends WP_List_Table {
     function __construct(){
         global $status, $page;
@@ -610,6 +739,7 @@ function cb_add_menu_items(){
     add_submenu_page('cb_leads', 'Referal List', 'Referal List', 'activate_plugins', 'cb_referrals', 'cb_refer_list_page');
     add_submenu_page('cb_leads', 'Bank List', 'Bank List', 'activate_plugins', 'cb_bank', 'cb_bank_list_page');
     add_submenu_page('cb_leads', 'Area List', 'Area List', 'activate_plugins', 'cb_area', 'cb_area_list_page');
+    add_submenu_page('cb_leads', 'Insurance List', 'Insurance List', 'activate_plugins', 'cb_insurance', 'cb_insurance_list_page');
 } 
 add_action('admin_menu', 'cb_add_menu_items');
 
@@ -766,6 +896,64 @@ function cb_area_list_page(){
                                 <input name="pin"  type="text" value="" size="40" aria-required="true">
                             </div>
                             <p class="submit"><input type="submit" name="areasubmit" id="submit" class="button button-primary" value="Add New"></p>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- /col-left -->
+
+            <div id="col-right">
+                <div class="col-wrap">
+
+                    <form id="movies-filter" method="get">
+                        <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
+                        <?php $testListTable->display() ?>
+                    </form>
+                </div>
+            </div><!-- /col-right -->
+
+        </div>
+        
+    </div>
+    <?php
+}
+
+if(isset($_POST['insurancesubmit'])){
+    $banks = get_option('cb_insurance');
+
+    $banks = $banks ? $banks : [];
+
+    $banks[] = array('id' => strtotime('now'), 'name' => $_POST['name']);
+
+    update_option('cb_insurance', $banks);
+   
+
+    wp_redirect('admin.php?page=cb_insurance');
+}
+
+function cb_insurance_list_page(){
+    
+    //Create an instance of our package class...
+    $testListTable = new Insurance_List_Table();
+    //Fetch, prepare, sort, and filter our data...
+    $testListTable->prepare_items();
+
+    ?>
+    <div class="wrap">
+        
+        <div id="icon-users" class="icon32"><br/></div>
+        <h2>Insurance List</h2>
+        
+        <div id="col-container" class="wp-clearfix">
+            <div id="col-left">
+                <div class="col-wrap">
+                    <div class="form-wrap">
+                    <h2>Add New Insurance Type</h2>
+                        <form id="addtag" method="post" class="validate">
+                            <div class="form-field form-required term-name-wrap">
+                                <label for="tag-name">Insurance Name</label>
+                                <input name="name" id="tag-name" type="text" value="" size="40" aria-required="true">
+                            </div>
+                            <p class="submit"><input type="submit" name="insurancesubmit" id="submit" class="button button-primary" value="Add New"></p>
                         </form>
                     </div>
                 </div>

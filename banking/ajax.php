@@ -49,11 +49,22 @@ function cb_new_enquiry(){
 		}
 		$data['banks'] = serialize($banks);
 	}
+
+
 	$data['dob'] = implode('-', $data['dob']);
 	$data['enquiry_ts'] = date('Y-m-d H:i:s');
-	$data['cab'] = implode(',', $data['cab']);
+	$cab = array();
+	if($data['cab']){
+		foreach ($data['cab'] as $key => $value) {
+			if($value){
+				$cab[] = $key;
+			}
+		}
+		$data['cab'] = implode(',', $cab);
+	}
 	
-	//print_r($data);
+	$data['cab'] = $data['cab'] ? $data['cab'] : '';
+
 
 	$res = $wpdb->insert('wp_enquiry', $data);
 
@@ -71,47 +82,55 @@ function cb_new_enquiry(){
 
 
 		$body = '<h3>Hi Admin,</h3>';
-		$body .= "<p><b>Lead ID</b>: $lid</p>";
+		$body .= "<p><b>Lead ID</b>: $lid</p>
+				<p><b>Enquiry Time:</b> ".$data['enquiry_ts']."</p>";
 
-		$body .= "<p><b>Name: </b>: ".$data['name']."</p>
-			<p><b>Email:</b>: ".$data['email']."</p>
-			<p><b>Mobile:</b>: ".$data['mobile']."</p>
-			<p><b>Gender:</b>: ".$data['gender']."</p>
-			<p><b>Dob:</b>: ".$data['dob']."</p>
-			<p><b>ZIP:</b>: ".$data['zip']."</p>";
+		$body .= "<p><b>Name: </b> ".$data['name']."</p>
+			<p><b>Email:</b>".$data['email']."</p>
+			<p><b>Mobile:</b> ".$data['mobile']."</p>
+			<p><b>Gender:</b> ".$data['gender']."</p>
+			<p><b>Dob:</b> ".$data['dob']."</p>
+			<p><b>ZIP:</b> ".$data['zip']."</p>";
+
+			if($data['etype'] == 'Insurance'){
+
+			$body .= "<p><b>Insurance Type: </b> ".$data['insurance']."</p>";
+			
+		}
+		
 
 			if($data['etype'] == 'Business Loan'){
 
-			$body .= "<p><b>Loan Amount Required: </b>: ".$data['lar']."</p>";
-			$body .= "<p><b>Company Type: </b>: ".$data['cmpytype']."</p>";
-			$body .= "<p><b>Current Account Maintained In: </b>: ".$data['cab']."</p>";
-			$body .= "<p><b>Latest year total profit as per ITR:</b>: ".$data['profit']."</p>";
+			$body .= "<p><b>Loan Amount Required: </b> ".$data['lar']."</p>";
+			$body .= "<p><b>Company Type: </b> ".$data['cmpytype']."</p>";
+			$body .= "<p><b>Current Account Maintained In: </b> ".$data['cab']."</p>";
+			$body .= "<p><b>Latest year total profit as per ITR:</b> ".$data['profit']."</p>";
 		}
 		else{
 
 		if($data['occupation'] == 'Salaried'){
-			$body .= "<p><b>Company Name: </b>: ".$data['company']."</p>";
-			$body .= "<p><b>Monthly Income: </b>: ".$data['monthly']."</p>";
-			$body .= "<p><b>I receive Salary By: </b>: ".$data['salary_by']."</p>";
+			$body .= "<p><b>Company Name: </b> ".$data['company']."</p>";
+			$body .= "<p><b>Monthly Income: </b> ".$data['monthly']."</p>";
+			$body .= "<p><b>I receive Salary By: </b> ".$data['salary_by']."</p>";
 		} elseif($data['occupation'] == 'Self Employed'){
-			$body .= "<p><b>Latest Year Income after Tax: </b>: ".$data['income']."</p>";	
+			$body .= "<p><b>Latest Year Income after Tax: </b> ".$data['income']."</p>";	
 		}
 	}
 
 		if($data['etype'] == 'Credit Card'){
-			$body .= "<p><b>Existing Creditcard: </b>: ".$data['cc']."</p>";
+			$body .= "<p><b>Existing Creditcard: </b> ".$data['cc']."</p>";
 			if($data['cc'] == 'Yes'){
-				$body .= "<p><b>Banks: </b>: ".implode(",", $data['banks'])."</p>";
-				$body .= "<p><b>Credit Limit: </b>: ".$data['creditlimit']."</p>";
+				$body .= "<p><b>Banks: </b> ".implode(",", $data['banks'])."</p>";
+				$body .= "<p><b>Credit Limit: </b> ".$data['creditlimit']."</p>";
 			}
-		} else{
-			$body .= "<p><b>Are you paying any monthly EMI?: </b>: ".$data['cc']."</p>";
+		} elseif($data['etype'] != 'Insurance'){
+			$body .= "<p><b>Are you paying any monthly EMI?: </b> ".$data['cc']."</p>";
 			if($data['cc'] == 'Yes'){
-				$body .= "<p><b>Total amount of EMIs you currently pay per month: </b>: ".$data['creditlimit']."</p>";
+				$body .= "<p><b>Total amount of EMIs you currently pay per month: </b> ".$data['creditlimit']."</p>";
 			}
 		}
-
-		$body .= "<p><b>Preferred Language: </b>: ".($data['language'] == 'Others' ? $data['otherlanguage'] : $data['language'])."</p>";
+	
+		$body .= "<p><b>Preferred Language: </b> ".($data['language'] == 'Others' ? $data['otherlanguage'] : $data['language'])."</p>";
 
 		wp_mail( $to, $subject, $body );
 		$data = array('status' => 'Success', 'id' => $id);
@@ -128,7 +147,7 @@ function cb_update_verified(){
 
 	$_POST = (array) json_decode(file_get_contents('php://input'));
 
-	$wpdb->update('wp_enquiry', array('mobile_verified' => 1), array('id' => $_POST['id']));
+	$wpdb->update('wp_enquiry', array('mobile'=>$_POST['mobile'],'mobile_verified' => 1), array('id' => $_POST['id']));
 
 	$data = array('status' => 'Success');
 	echo json_encode($data);

@@ -17,6 +17,22 @@
 <section class="que-form" >          
     <div class="container" ng-controller="CCFormController">
 
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="loader">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal">×</button>-->
+                <h4 class="modal-title">Loading... Please wait</h4>
+                
+              </div>
+              <div class="cssload-speeding-wheel"></div>
+            
+          </div>
+
+       </div>
+      </div>
+
       <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"  id="onload">
           <div class="modal-dialog">
             <!-- Modal content-->
@@ -56,6 +72,30 @@
         <div class="modal-body"> 
           <form ng-if="!pageInfo.enquirydone" name="pageInfo.enquiryform" ng-class="{formSubmitted: pageInfo.formSubmitted}" autocomplete="off" ng-init="newEnquiry.etype='<?php the_title(); ?>'">
             <h5><b>Get the best <?php the_title(); ?> that suits your requirement by filling the below Details.</b></h5>
+
+            <div class="row">
+                    <div class="col-sm-6">
+                            <div class="form-wrap">
+                              <label>Select the Insurance product you want to apply</label> 
+                            </div>
+                     </div>                      
+                    <div class="col-sm-6">
+                          <div class="form-wrap">
+                           <input autocomplete="off" ng-click="$event.stopPropagation();pageInfo.showInsurance = true" ng-model="newEnquiry.insurance" class="form-control" placeholder="Select the insurance type" id="insurance" type="text" name="insurance" required> 
+                            
+                              
+                            <div ng-click="$event.stopPropagation();" class="citylist" ng-show="pageInfo.showInsurance">
+                               <?php
+                                $banks = get_option('cb_insurance');
+                                $banks = $banks ? $banks : [];
+                                
+                                foreach ($banks as $key => $value) {?>
+                                  <span ng-click="newEnquiry.insurance='<?= $value['name'];?>';pageInfo.showInsurance = false;"><label for="insurance<?= $key?>"><?= $value['name'];?></label></span>
+                                <?php } ?>
+                            </div> 
+                    </div>
+              </div>
+            </div>
               <div class="row">
                      <div class="col-sm-6">
                               <div class="form-wrap">
@@ -81,7 +121,7 @@
                         <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label>Mobile Number</label>
-                                <input ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
+                                <input ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" maxlength="10" required>
                                 <p ng-if="pageInfo.mobileVerified == 2">OTP Sent to your mobile number. Please verify</p>
                                 <p ng-if="pageInfo.mobileVerified == 3"><i class="fa fa-close"></i> Invalid Mobile Number</p>
                               </div>
@@ -109,7 +149,7 @@
                                     <?php 
                                     $month = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' );
                                     for($i=0;$i<12;$i++){?>
-                                    <option value="<?= $month[$i]?>"><?= $month[$i]?></option>
+                                    <option value="<?= $i+1 ?>"><?= $month[$i]?></option>
                                     <?php }?>
                                   </select>
                                   <select class="form-control date-select" name="year" ng-model="newEnquiry.dob[0]" required>
@@ -182,28 +222,7 @@
                           </div>
                         </div>
                   </div>                  
-                <div class="row">
-                    <div class="col-sm-6">
-                            <div class="form-wrap">
-                              <label>Are you paying any monthly EMI?</label> 
-                                <p><label class="rediobtn">Yes
-                                  <input type="radio" ng-model="newEnquiry.cc" value="Yes" name="cc">
-                                  <span class="checkmark"></span>
-                                </label>
-                                <label class="rediobtn">No
-                                  <input type="radio" ng-model="newEnquiry.cc" value="No" name="cc">
-                                  <span class="checkmark"></span>
-                                </label> </p>         
-                            </div>
-                     </div>                      
-                    <div class="col-sm-6" ng-if="newEnquiry.cc == 'Yes'">
-                          <div class="form-wrap">
-                             <label>Total amount of EMIs you currently pay per month</label>
-                           <input ng-model="newEnquiry.creditlimit" class="form-control" id="creditlimit" placeholder="Total amount of EMIs you currently pay per month" type="number" name="creditlimit" required onkeyup="creditlimittext.innerHTML=convertNumberToWords(this.value)" />
-                          <div id="creditlimittext"></div>              
-                      </div>
-                    </div>
-                </div>
+                
 
                 <div class="row">                 
                   <div class="col-sm-6">
