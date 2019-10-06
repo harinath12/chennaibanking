@@ -134,7 +134,7 @@ echo do_shortcode('[smartslider3 slider=2]');
               </a>
             </div>
             <div class="col-md-2 col-sm-6 col-6">
-             <a href="<?= site_url('home-loan');?>">
+             <a href="<?= site_url('insurance');?>">
                 <div class="flip-card">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
