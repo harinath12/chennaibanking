@@ -197,7 +197,7 @@ text-decoration: underline;
     border-radius: 0.25rem;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.wpcf7, .strong-form .form-field.wpmtst-submit input[type="submit"]{
+ .wpcf7-form input[type="submit"]{
 	padding: 9px 30px!important;
     font-size: 14px!important;
     line-height: 1.5!important;
@@ -495,4 +495,7 @@ div#wpcs_tab_12940 {
 .modal-content .cssload-speeding-wheel{
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.content p{
+  text-align: justify;
 }

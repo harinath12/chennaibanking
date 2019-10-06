@@ -262,7 +262,7 @@ echo do_shortcode('[smartslider3 slider=2]');
                       <p class="employee-p">Customer Ratings</p>
                   </div>
                 </div>
-              </div><a class="button button-primary button-lg" href="#">Learn More</a>
+              </div><a class="button button-primary button-lg" href="<?= site_url('about-us');?>">Learn More</a>
             </div>
           </div>
         </div><img class="img-custom" src="<?php bloginfo('template_url');?>/images/index-3-1-959x808.png" alt="" width="959" height="808"/>
