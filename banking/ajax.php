@@ -92,40 +92,49 @@ function cb_new_enquiry(){
 			<p><b>Dob:</b> ".$data['dob']."</p>
 			<p><b>ZIP:</b> ".$data['zip']."</p>";
 
-			if($data['etype'] == 'Insurance'){
+		if($data['etype'] !='Business Loan'){
+				$body .= "<p><b>Occupation Type :</b>". $data['occupation']."</p>";
+			}
+		
+		if($data['etype'] == 'Insurance'){
 
 			$body .= "<p><b>Insurance Type: </b> ".$data['insurance']."</p>";
 			
 		}
 		
-
-			if($data['etype'] == 'Business Loan'){
+		if($data['etype'] == 'Business Loan'){
 
 			$body .= "<p><b>Loan Amount Required: </b> ".$data['lar']."</p>";
 			$body .= "<p><b>Company Type: </b> ".$data['cmpytype']."</p>";
 			$body .= "<p><b>Current Account Maintained In: </b> ".$data['cab']."</p>";
 			$body .= "<p><b>Latest year total profit as per ITR:</b> ".$data['profit']."</p>";
 		}
+
 		else{
 
 		if($data['occupation'] == 'Salaried'){
 			$body .= "<p><b>Company Name: </b> ".$data['company']."</p>";
 			$body .= "<p><b>Monthly Income: </b> ".$data['monthly']."</p>";
 			$body .= "<p><b>I receive Salary By: </b> ".$data['salary_by']."</p>";
-		} elseif($data['occupation'] == 'Self Employed'){
+		} 
+		elseif($data['occupation'] == 'Self Employed'){
 			$body .= "<p><b>Latest Year Income after Tax: </b> ".$data['income']."</p>";	
 		}
-	}
+		}
 
 		if($data['etype'] == 'Credit Card'){
 			$body .= "<p><b>Existing Creditcard: </b> ".$data['cc']."</p>";
-			if($data['cc'] == 'Yes'){
-				$body .= "<p><b>Banks: </b> ".implode(",", $data['banks'])."</p>";
+
+		if($data['cc'] == 'Yes'){
+				$body .= "<p><b>Banks: </b> ".implode(",", unserialize($data['banks']))."</p>";
 				$body .= "<p><b>Credit Limit: </b> ".$data['creditlimit']."</p>";
 			}
-		} elseif($data['etype'] != 'Insurance'){
+		} 
+
+		elseif($data['etype'] != 'Insurance'){
 			$body .= "<p><b>Are you paying any monthly EMI?: </b> ".$data['cc']."</p>";
-			if($data['cc'] == 'Yes'){
+		
+		if($data['cc'] == 'Yes'){
 				$body .= "<p><b>Total amount of EMIs you currently pay per month: </b> ".$data['creditlimit']."</p>";
 			}
 		}
