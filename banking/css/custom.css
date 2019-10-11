@@ -278,7 +278,11 @@ input.wpcf7-not-valid, textarea.wpcf7-not-valid {
     padding: 11px;
   }
 body .logo img{
-  width: 200px!important;
+    padding-left: 40px;
+}
+
+.marquee {
+    margin-top: 10px!important;
 }
 
 .customer-logos .slide{
@@ -350,9 +354,10 @@ body .logo img{
 }
 .logo img{
     height: auto;
-    width: 230px!important;
-    padding: 5px;
+    width: 300px!important;
+    padding: 10px 5px 5px 30px;
 }
+
 .ecww-tenure-choice{
   display: none;
 }
