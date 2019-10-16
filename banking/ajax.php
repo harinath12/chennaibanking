@@ -88,6 +88,7 @@ function cb_new_enquiry(){
 		$body .= "<p><b>Name: </b> ".$data['name']."</p>
 			<p><b>Email:</b>".$data['email']."</p>
 			<p><b>Mobile:</b> ".$data['mobile']."</p>
+			<p><b>Mobile Verified:</b> ".($data['mobile_verified']?'Yes':'No')."</p>
 			<p><b>Gender:</b> ".$data['gender']."</p>
 			<p><b>Dob:</b> ".$data['dob']."</p>
 			<p><b>ZIP:</b> ".$data['zip']."</p>";

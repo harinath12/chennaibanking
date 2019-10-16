@@ -220,7 +220,26 @@ $(document).ready(function(){
             }
         });
     });
+    function check(r){
 
+    var mobile = document.getElementById('mobile'+r);
+
+
+    var message = document.getElementById('message'+r);
+
+   var goodColor = "#0C6";
+    var badColor = "#FF9B37";
+
+    if(mobile.value.length!=10){
+
+        message.style.color = badColor;
+        message.innerHTML = "Invalid Mobile Number, required 10 digits."
+        }
+    else{
+        message.style.color = goodColor;
+        message.innerHTML = "OTP will be sent to your mobile number. Please verify"
+    }
+    }
 
 </script>
   </body>

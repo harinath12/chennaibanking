@@ -50,7 +50,7 @@
                   <div class="form-wrap">
                     <div>
                       <label ng-show="pageInfo.changemobilenumber">Mobile Number</label>
-                      <input ng-show="pageInfo.changemobilenumber" ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" required>
+                     <input ng-show="pageInfo.changemobilenumber" ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile2" type="number" name="mobile" pattern="[789][0-9]{9}" required onkeyup="check(2); return false;" ><span ng-show="pageInfo.changemobilenumber" id="message2"></span>
                         </div>
                         <p ng-hide="pageInfo.changemobilenumber">We have sent an OTP to {{newEnquiry.mobile}}</p>
                       <input ng-hide="pageInfo.changemobilenumber" ng-change="verify_otp();" ng-model="pageInfo.verifyotp" class="form-control" id="otp" placeholder="Verify OTP" type="text" name="otp" required>
@@ -97,15 +97,13 @@
                         <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label>Mobile Number</label>
-                                <input ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile" type="number" name="mobile" maxlength="10" required>
-                                <p ng-if="pageInfo.mobileVerified == 2">OTP Sent to your mobile number. Please verify</p>
-                                <p ng-if="pageInfo.mobileVerified == 3"><i class="fa fa-close"></i> Invalid Mobile Number</p>
+                               <input  ng-model="newEnquiry.mobile" class="form-control" placeholder="Mobile No" id="mobile1" type="number" name="mobile" pattern="[789][0-9]{9}" required onkeyup="check(1); return false;" ><span id="message1"></span>
                               </div>
                         </div>
                         <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label >Email</label>
-                                <input ng-model="newEnquiry.email" class="form-control" placeholder="Enter Your email" id="email" type="text" name="email" required>                
+                                <input ng-model="newEnquiry.email" class="form-control" placeholder="Enter Your email" id="email" type="email" name="email" required>                
                               </div>
                         </div>
                   </div>
@@ -154,7 +152,7 @@
                           <div class="form-wrap">
                             <label>Loan Amount Required</label>
                             <input ng-model="newEnquiry.lar" class="form-control" placeholder="Loan Amount Required" id="lar" type="number" name="lar" required onkeyup="lartext.innerHTML=convertNumberToWords(this.value)" />
-                            <div id="lartext"></div>
+                            <div id="lartext" class="num-color"></div>
                           </div>
                       </div>
                       <div class="col-sm-6">
@@ -204,7 +202,7 @@
                           <div class="form-wrap">
                             <label>Latest year total profit as per ITR</label>
                            <input ng-model="newEnquiry.profit" class="form-control" placeholder="Latest year total profit as per ITR" id="profit" type="number" name="profit" required onkeyup="profittext.innerHTML=convertNumberToWords(this.value)" />
-                            <div id="profittext"></div>
+                            <div id="profittext" class="num-color"></div>
                           </div>
                         </div>
                   </div>                  
@@ -226,7 +224,7 @@
                           <div class="form-wrap">
                              <label>Total amount of EMIs you currently pay per month</label>
                            <input ng-model="newEnquiry.creditlimit" class="form-control" id="creditlimit" placeholder="Total amount of EMIs you currently pay per month" type="number" name="creditlimit" required onkeyup="creditlimittext.innerHTML=convertNumberToWords(this.value)" />
-                          <div id="creditlimittext"></div>              
+                          <div id="creditlimittext" class="num-color"></div>              
                       </div>
                     </div>
                 </div>
