@@ -45,7 +45,7 @@ class Lead_List_Table extends WP_List_Table {
             	}
             	return $tmp;
             case 'email':
-            	return $item['email'].'<br>'.$item['mobile'];
+            	return $item['email'].'<br>'.$item['mobile'].'('.($item['mobile_verified'] ? '<span style="color:green"> Verified</span>' :  '<span style="color:red">Not Verified</span>' ).')';
             case 'lar':
             if($item['etype'] == 'Business Loan'){
                  $tmp .='<b>Loan amount Required:</b>'.$item['lar'].'<br>'.'<b>Company Type:</b>'.$item['cmpytype'];

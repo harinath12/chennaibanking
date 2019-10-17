@@ -83,7 +83,7 @@
                               <div class="form-wrap">
                                 <label>Gender</label>
                                   <p><label class="rediobtn">Male
-                                    <input ng-model="newEnquiry.gender" value="Male" type="radio" name="gender">
+                                    <input ng-model="newEnquiry.gender" value="Male" type="radio" name="gender" required>
                                     <span class="checkmark"></span>
                                   </label>
                                   <label class="rediobtn">Female
@@ -204,7 +204,7 @@
                             <div class="form-wrap">
                               <label>Are you paying any monthly EMI?</label> 
                                 <p><label class="rediobtn">Yes
-                                  <input type="radio" ng-model="newEnquiry.cc" value="Yes" name="cc">
+                                  <input type="radio" ng-model="newEnquiry.cc" value="Yes" name="cc" required>
                                   <span class="checkmark"></span>
                                 </label>
                                 <label class="rediobtn">No
