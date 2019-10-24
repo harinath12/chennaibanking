@@ -1,9 +1,35 @@
 <?php
-$ajax_actions = array('cb_verify_otp', 'cb_new_enquiry', 'cb_new_referral', 'cb_update_verified');
+$ajax_actions = array('cb_verify_otp', 'cb_new_enquiry', 'cb_new_referral', 'cb_update_verified', 'export_lead');
 
 foreach ($ajax_actions as $key => $value) {
 	add_action('wp_ajax_'.$value, $value);
 	add_action('wp_ajax_nopriv_'.$value, $value);
+}
+
+function export_lead(){
+	header('Content-Type: text/csv');
+	header('Content-Disposition: attachment; filename="lead_list.csv"');
+	global $wpdb; 
+	$res = $wpdb->get_results('select * from wp_enquiry');
+	//$leads = array();
+	$fp = fopen('php://output', 'wb');
+	$label = array('Lead Id', 'Name', 'Email', 'Mobile No', 'Date of Birth', 'Gender', 'Location', 'Occupation', 'Company', 'ITR', 'Monthly Income', 'Salary Received by', 'Existing Creditcard/Loan', 'Banks', 'creditlimit', 'Language', 'otherlanguage', 'Enquiry Type', 'Enquiry Date & Time', 'Terms & condition', 'Mobile Verified', 'Loan Amount Required', 'Company Type', 'Current Account Maintained', 'ITR profit', 'Insurance');
+	fputcsv($fp, $label);
+	foreach ($res as $key => $value) {
+		$value = (array) $value;
+		
+		$value['banks'] = implode(',',unserialize($value['banks']));
+		$value['id'] = $value['lead_id'];
+		$value['mobile_verified'] = $value['mobile_verified']? 'Yes' : 'No';
+
+		$value['tnc'] = $value['tnc']? 'Yes' : 'No';
+		//$leads[] = implode(',', array_values($value));
+		unset($value['lead_id']);
+		
+		fputcsv($fp, array_values($value));
+	}
+	fclose($fp);
+	die(0);
 }
 
 function cb_verify_otp(){

@@ -76,7 +76,7 @@
                      <div class="col-sm-6">
                               <div class="form-wrap">
                                 <label >Full Name (as per PAN Card)</label>
-                                <input ng-model="newEnquiry.name" class="form-control" placeholder="Name as per PAN Card" id="name" type="text" name="name" required>                
+                                <input ng-model="newEnquiry.name" class="form-control" placeholder="Enter your Full name" id="name" type="text" name="name" required>                
                               </div>
                     </div>
                     <div class="col-sm-6">

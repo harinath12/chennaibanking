@@ -766,7 +766,7 @@ function cb_render_list_page(){
     <div class="wrap">
         
         <div id="icon-users" class="icon32"><br/></div>
-        <h2>Leads Table</h2>
+        <h2>Leads Table <a class="export_lead button button-primary" style="float: right;" href="admin-ajax.php?action=export_lead">Export</a></h2>
         
         <form id="movies-filter" method="get">
             <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
